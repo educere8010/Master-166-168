@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>천일문 독해 Master 166-168 | 에듀케레 영수학원</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans KR', sans-serif; background:#f5f5f0; color:#1a2744; line-height:1.7; }
+
+/* ===== Layout ===== */
+.container { display:flex; min-height:100vh; }
+.sidebar { width:260px; background:#1a2744; color:#fff; padding:30px 20px; position:sticky; top:0; height:100vh; overflow-y:auto; }
+.main { flex:1; padding:40px 50px; max-width:1100px; }
+
+/* ===== Sidebar ===== */
+.brand { font-family:'Playfair Display', serif; font-size:24px; color:#c8a84b; font-weight:900; margin-bottom:6px; letter-spacing:0.5px; }
+.brand-sub { font-size:13px; color:#d4c896; margin-bottom:30px; font-weight:500; }
+.sidebar h2 { font-size:14px; color:#c8a84b; margin:25px 0 12px; letter-spacing:1px; text-transform:uppercase; }
+.passage-list { list-style:none; }
+.passage-list li { margin-bottom:8px; }
+.passage-btn { width:100%; padding:12px 14px; background:transparent; color:#e8e4d8; border:1px solid #3a4560; border-radius:6px; text-align:left; cursor:pointer; font-family:inherit; font-size:14px; transition:all 0.2s; }
+.passage-btn:hover { background:#2a3554; border-color:#c8a84b; }
+.passage-btn.active { background:#c8a84b; color:#1a2744; border-color:#c8a84b; font-weight:700; }
+
+/* ===== Cover ===== */
+.cover { text-align:center; padding:60px 20px; background:linear-gradient(135deg, #fff 0%, #f5f0e0 100%); border:2px solid #c8a84b; border-radius:12px; margin-bottom:30px; }
+.cover-title { font-family:'Playfair Display', serif; font-size:42px; color:#1a2744; font-weight:900; margin-bottom:10px; }
+.cover-sub { font-size:20px; color:#5a6a8a; margin-bottom:30px; font-weight:500; }
+.cover-academy { font-size:22px; color:#c8a84b; font-weight:700; letter-spacing:2px; margin-top:20px; }
+.cover-academy-en { font-family:'EB Garamond', serif; font-style:italic; font-size:15px; color:#7a6a3a; margin-top:6px; }
+
+/* ===== Tabs ===== */
+.passage-panel { display:none; }
+.passage-panel.active { display:block; }
+.passage-title { font-family:'Playfair Display', serif; font-size:28px; color:#1a2744; margin-bottom:8px; border-bottom:3px solid #c8a84b; padding-bottom:12px; }
+.passage-num { color:#c8a84b; font-size:18px; font-weight:700; margin-bottom:4px; }
+
+.tabs { display:flex; flex-wrap:wrap; gap:6px; margin:25px 0 20px; border-bottom:2px solid #1a2744; padding-bottom:0; }
+.tab-btn { padding:11px 16px; background:#fff; color:#1a2744; border:1px solid #d0d0c0; border-bottom:none; border-radius:6px 6px 0 0; cursor:pointer; font-family:inherit; font-size:13px; font-weight:500; transition:all 0.2s; }
+.tab-btn:hover { background:#f0ebd8; }
+.tab-btn.active { background:#1a2744; color:#c8a84b; font-weight:700; border-color:#1a2744; }
+.tab-panel { display:none; padding:30px 5px; }
+.tab-panel.active { display:block; }
+
+/* ===== Content blocks ===== */
+.section-title { font-size:20px; color:#1a2744; font-weight:700; margin-bottom:18px; padding-left:14px; border-left:5px solid #c8a84b; }
+
+.full-passage-box { background:#fff; border:1.5px solid #d0d0c0; border-left:5px solid #1a2744; border-radius:6px; padding:24px 28px; margin-bottom:25px; font-family:'EB Garamond', serif; font-size:17px; line-height:1.85; color:#222; }
+.full-passage-box .sent-num { color:#c8a84b; font-weight:700; margin-right:4px; }
+
+.sentence-block { margin-bottom:28px; padding-bottom:24px; border-bottom:1px dashed #d0d0c0; }
+.sentence-block:last-child { border-bottom:none; }
+.eng-box { background:#fff; border:1px solid #d0d0c0; border-left:4px solid #1a2744; border-radius:5px; padding:14px 18px; margin-bottom:10px; font-family:'EB Garamond', serif; font-size:16px; line-height:1.7; color:#222; }
+.eng-box .num { color:#c8a84b; font-weight:700; margin-right:6px; }
+.literal { background:#faf8f0; border-left:3px solid #c8a84b; padding:10px 14px; margin-bottom:10px; font-size:14.5px; }
+.literal-en { color:#555; font-family:'EB Garamond', serif; font-size:15px; margin-bottom:6px; }
+.literal-ko { color:#1a2744; font-weight:500; }
+.grammar-bullets { margin-top:8px; padding-left:6px; }
+.grammar-bullets li { list-style:none; font-size:14px; margin-bottom:6px; color:#333; padding-left:8px; }
+.grammar-bullets .g-name { color:#1a2744; font-weight:700; }
+.grammar-bullets .g-ex { color:#5a6a8a; font-style:italic; }
+.grammar-bullets .g-point { color:#a08020; }
+
+/* ===== Vocabulary ===== */
+.vocab-grid { display:grid; grid-template-columns:1fr; gap:10px; }
+.vocab-item { background:#fff; border:1px solid #e0d8b8; border-left:4px solid #c8a84b; border-radius:5px; padding:12px 16px; display:grid; grid-template-columns:180px 1fr 60px 1fr; gap:14px; align-items:center; font-size:14px; }
+.vocab-word { font-family:'EB Garamond', serif; font-size:17px; font-weight:700; color:#1a2744; }
+.vocab-mean { color:#222; font-weight:500; }
+.vocab-pos { color:#888; font-style:italic; font-size:13px; }
+.vocab-deriv { color:#5a6a8a; font-size:13px; }
+
+/* ===== Translation ===== */
+.translation { background:#fff; border:1px solid #d0d0c0; border-radius:6px; padding:24px 28px; line-height:2; font-size:15.5px; color:#222; }
+
+/* ===== Theme & Summary ===== */
+.theme-card { background:#fff; border:1px solid #d0d0c0; border-radius:6px; padding:20px 24px; margin-bottom:16px; }
+.theme-card h3 { color:#c8a84b; font-size:14px; letter-spacing:1px; margin-bottom:8px; text-transform:uppercase; }
+.theme-card p { font-size:15px; color:#222; line-height:1.8; }
+.structure-flow { display:flex; flex-direction:column; gap:10px; margin-top:8px; }
+.flow-step { background:#faf8f0; border-left:4px solid #c8a84b; padding:10px 14px; font-size:14.5px; }
+.flow-step b { color:#1a2744; }
+
+/* ===== Background ===== */
+.bg-content { background:#fff; border:1px solid #d0d0c0; border-radius:6px; padding:24px 28px; font-size:15px; line-height:2; color:#222; }
+.bg-content h3 { color:#1a2744; font-size:16px; margin:18px 0 10px; padding-left:10px; border-left:4px solid #c8a84b; }
+.bg-content h3:first-child { margin-top:0; }
+.bg-content p { margin-bottom:10px; }
+
+/* ===== Quiz ===== */
+.quiz-q { background:#fff; border:1px solid #d0d0c0; border-radius:6px; padding:22px 26px; margin-bottom:20px; }
+.quiz-q-title { font-weight:700; color:#1a2744; margin-bottom:12px; font-size:15px; }
+.quiz-q-text { margin-bottom:14px; font-size:14.5px; line-height:1.8; color:#222; }
+.quiz-q-text .eng { font-family:'EB Garamond', serif; font-size:15.5px; }
+.quiz-opts { display:flex; flex-direction:column; gap:8px; }
+.quiz-opt { padding:10px 14px; background:#faf8f0; border:1px solid #e0d8b8; border-radius:5px; cursor:pointer; font-family:inherit; font-size:14px; text-align:left; transition:all 0.15s; color:#222; }
+.quiz-opt:hover { background:#f0ebd8; }
+.quiz-opt.correct { background:#d4edda; border-color:#28a745; color:#155724; font-weight:600; }
+.quiz-opt.wrong { background:#f8d7da; border-color:#dc3545; color:#721c24; }
+.quiz-feedback { margin-top:10px; padding:10px 14px; border-radius:5px; font-size:13.5px; display:none; }
+.quiz-feedback.show { display:block; }
+.quiz-feedback.ok { background:#d4edda; color:#155724; border-left:4px solid #28a745; }
+.quiz-feedback.ng { background:#f8d7da; color:#721c24; border-left:4px solid #dc3545; }
+.reset-btn { margin-top:10px; padding:6px 12px; background:transparent; border:1px solid #c8a84b; color:#c8a84b; border-radius:4px; cursor:pointer; font-family:inherit; font-size:12px; }
+.reset-btn:hover { background:#c8a84b; color:#fff; }
+
+/* ===== 서술형 ===== */
+.essay-q { background:#fff; border:1px solid #d0d0c0; border-left:4px solid #c8a84b; border-radius:6px; padding:22px 26px; margin-bottom:20px; }
+.essay-q-title { font-weight:700; color:#1a2744; margin-bottom:8px; font-size:15px; }
+.essay-cond { font-size:13px; color:#7a6a3a; background:#faf8f0; padding:8px 12px; border-radius:4px; margin-bottom:12px; }
+.essay-text { font-size:14.5px; line-height:1.8; color:#222; margin-bottom:12px; }
+.essay-text .eng { font-family:'EB Garamond', serif; }
+.essay-input { width:100%; min-height:80px; padding:10px 14px; border:1.5px solid #d0d0c0; border-radius:5px; font-family:'Noto Sans KR', sans-serif; font-size:14px; resize:vertical; line-height:1.7; }
+.essay-input:focus { outline:none; border-color:#c8a84b; }
+.toggle-ans-btn { margin-top:10px; padding:8px 14px; background:#1a2744; color:#c8a84b; border:none; border-radius:5px; cursor:pointer; font-family:inherit; font-size:13px; font-weight:500; }
+.toggle-ans-btn:hover { background:#2a3554; }
+.model-ans { display:none; margin-top:12px; background:#faf8f0; border-left:4px solid #c8a84b; padding:12px 16px; font-size:14px; line-height:1.8; color:#222; border-radius:4px; }
+.model-ans.show { display:block; }
+.model-ans b { color:#1a2744; }
+
+/* Footer */
+.footer { text-align:center; margin-top:50px; padding:20px; border-top:2px solid #1a2744; color:#5a6a8a; font-size:13px; }
+.footer b { color:#c8a84b; }
+
+@media (max-width:900px) {
+  .container { flex-direction:column; }
+  .sidebar { width:100%; height:auto; position:relative; }
+  .main { padding:25px 20px; }
+  .vocab-item { grid-template-columns:1fr; gap:4px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<aside class="sidebar">
+  <div class="brand">에듀케레</div>
+  <div class="brand-sub">영수학원 · 바른학습관</div>
+  <h2>지문 선택</h2>
+  <ul class="passage-list">
+    <li><button class="passage-btn active" onclick="showPassage(0)">표지</button></li>
+    <li><button class="passage-btn" onclick="showPassage(166)">166. Zen &amp; Maintenance</button></li>
+    <li><button class="passage-btn" onclick="showPassage(167)">167. Swiss Cheese Model</button></li>
+    <li><button class="passage-btn" onclick="showPassage(168)">168. Animal Deception</button></li>
+  </ul>
+  <h2 style="margin-top:35px;">Info</h2>
+  <div style="font-size:12px; color:#a8a890; line-height:1.7;">
+    천일문 독해 Master<br>
+    Passages 166-168<br>
+    <br>
+    경남 양산시 물금읍<br>
+    ☎ 055-363-8010
+  </div>
+</aside>
+
+<main class="main">
+
+<!-- ===== COVER ===== -->
+<div class="passage-panel active" id="p0">
+  <div class="cover">
+    <div class="cover-title">천일문 독해 Master</div>
+    <div class="cover-sub">Passages 166 · 167 · 168 분석지</div>
+    <div style="margin:30px 0; font-size:15px; color:#5a6a8a; line-height:2;">
+      <div>166. Zen &amp; Motorcycle Maintenance</div>
+      <div>167. Active vs Latent Errors &amp; Swiss Cheese Model</div>
+      <div>168. Misinformation in the Animal Kingdom</div>
+    </div>
+    <div class="cover-academy">에듀케레 영수학원</div>
+    <div class="cover-academy-en">Educare English &amp; Math Academy</div>
+  </div>
+  <div style="background:#fff; border:1px solid #d0d0c0; border-radius:6px; padding:24px 28px; margin-top:20px;">
+    <h3 style="color:#1a2744; margin-bottom:12px;">📘 학습 안내</h3>
+    <p style="font-size:14.5px; line-height:1.9; color:#333;">
+      좌측 사이드바에서 지문을 선택하세요. 각 지문은 <b>전문 · 문장분석 · 핵심단어 · 전문해석 · 주제/요지 · 배경지식 · 변형문제</b> 7개 탭으로 구성되어 있습니다.<br><br>
+      변형문제 탭에서는 객관식 문항을 클릭하여 즉시 정오답을 확인할 수 있고, 서술형 문항은 직접 답안을 작성한 후 모범답안 보기 버튼으로 비교 학습이 가능합니다.
+    </p>
+  </div>
+</div>
+
+<!-- ===== Passage 166 ===== -->
+<div class="passage-panel" id="p166">
+  <div class="passage-num">PASSAGE 166</div>
+  <h1 class="passage-title">Zen and the Art of Motorcycle Maintenance</h1>
+
+  <div class="tabs">
+    <button class="tab-btn active" onclick="showTab(166,1)">① 전문</button>
+    <button class="tab-btn" onclick="showTab(166,2)">② 문장분석</button>
+    <button class="tab-btn" onclick="showTab(166,3)">③ 핵심단어</button>
+    <button class="tab-btn" onclick="showTab(166,4)">④ 전문해석</button>
+    <button class="tab-btn" onclick="showTab(166,5)">⑤ 주제·요지</button>
+    <button class="tab-btn" onclick="showTab(166,6)">⑥ 배경지식</button>
+    <button class="tab-btn" onclick="showTab(166,7)">⑦ 변형문제</button>
+  </div>
+
+  <!-- Tab 1: 전문 -->
+  <div class="tab-panel active" id="t166-1">
+    <h2 class="section-title">전문 (Full Passage)</h2>
+    <div class="full-passage-box">
+      <span class="sent-num">①</span> Tuning the motorcycle so many times has rendered it a ritual; I no longer need to deliberate on how to perform it. <span class="sent-num">②</span> In addition, just as Zen Buddhists practice just sitting, where self and object merge, I can see motorcycle maintenance as just fixing, where the machine and I unify into a singular entity. <span class="sent-num">③</span> When I'm not dominated by feelings of separateness from what I'm working on, I can be said to care—a feeling of identification with the task itself, and in this state, I also see another side of caring: quality itself. <span class="sent-num">④</span> So in all tasks, the key is to cultivate a peace of mind which eases the boundary between me and my surroundings. <span class="sent-num">⑤</span> From that peace, values arise naturally. <span class="sent-num">⑥</span> Those values then guide me to think clearly and act rightly, and the things I create or do in that state aren't just results—they're <b><i>visible expressions of inner harmony.</i></b>
+    </div>
+  </div>
+
+  <!-- Tab 2: 문장분석 -->
+  <div class="tab-panel" id="t166-2">
+    <h2 class="section-title">문장분석 (Sentence-by-Sentence Analysis)</h2>
+
+    <!-- Sentence 1 -->
+    <div class="sentence-block">
+      <div class="eng-box"><span class="num">①</span> Tuning the motorcycle so many times has rendered it a ritual; I no longer need to deliberate on how to perform it.</div>
+      <div class="literal">
+        <div class="literal-en">Tuning the motorcycle so many times / has rendered it a ritual; / I no longer need / to deliberate on / how to perform it.</div>
+        <div class="literal-ko">오토바이를 너무 많이 조율한 것이 / 그것을 의식으로 만들었다; / 나는 더 이상 ~할 필요가 없다 / 숙고할 / 어떻게 그것을 수행할지를.</div>
+      </div>
+      <ul class="grammar-bullets">
+        <li>◆ <span class="g-name">동명사구 주어 (단수 취급)</span> / ▶ <span class="g-ex">Tuning the motorcycle ... has rendered</span> / ★ <span class="g-point">동명사 주어 → 단수 동사 has — 수일치 함정</span></li>
+        <li>◆ <span class="g-name">render O C (5형식, ~을 …로 만들다)</span> / ▶ <span class="g-ex">has rendered it a ritual</span> / ★ <span class="g-point">make/render + 목적어 + 명사보어 — make와 동의 / 어휘 빈출</span></li>
+        <li>◆ <span class="g-name">no longer (더 이상 ~ 아닌)</span> / ▶ <span class="g-ex">I no longer need to deliberate</span> / ★ <span class="g-point">"not ~ anymore"와 동의 — 부정부사 위치 (조동사 뒤)</span></li>
+        <li>◆ <span class="g-name">의문사 + to부정사 (how to-V)</span> / ▶ <span class="g-ex">how to perform it</span> / ★ <span class="g-point">"어떻게 ~할지" — 명사구로 동사 deliberate on의 목적어</span></li>
+      </ul>
+    </div>
+
+    <!-- Sentence 2 -->
+    <div class="sentence-block">
+      <div class="eng-box"><span class="num">②</span> In addition, just as Zen Buddhists practice just sitting, where self and object merge, I can see motorcycle maintenance as just fixing, where the machine and I unify into a singular entity.</div>
+      <div class="literal">
+        <div class="literal-en">In addition, / just as Zen Buddhists practice just sitting, / where self and object merge, / I can see motorcycle maintenance as just fixing, / where the machine and I unify / into a singular entity.</div>
+        <div class="literal-ko">덧붙여, / 마치 선불교 신자들이 그저 앉기를 수행하는 것처럼, / 자아와 대상이 합쳐지는 곳에서, / 나는 오토바이 정비를 그저 고치는 것으로 볼 수 있다, / 기계와 내가 하나가 되는 / 단일한 실체로.</div>
+      </div>
+      <ul class="grammar-bullets">
+        <li>◆ <span class="g-name">just as S+V (마치 ~인 것처럼, 똑같이)</span> / ▶ <span class="g-ex">just as Zen Buddhists practice just sitting</span> / ★ <span class="g-point">"~인 것과 똑같이" — 비유·유추 도입 / "(just) as ~ , so ~" 구문 변형</span></li>
+        <li>◆ <span class="g-name">관계부사 where (계속적 용법)</span> / ▶ <span class="g-ex">just sitting, where self and object merge</span> / ★ <span class="g-point">선행사 just sitting을 보충 설명 / 추상적 상황에도 where 사용 가능</span></li>
+        <li>◆ <span class="g-name">see A as B (A를 B로 여기다)</span> / ▶ <span class="g-ex">I can see motorcycle maintenance as just fixing</span> / ★ <span class="g-point">5형식 동사 + as 보어 / regard/view/perceive A as B 계열</span></li>
+        <li>◆ <span class="g-name">unify into N (~로 통합되다)</span> / ▶ <span class="g-ex">the machine and I unify into a singular entity</span> / ★ <span class="g-point">자동사 unify + 전치사 into "~로 하나가 되다"</span></li>
+      </ul>
+    </div>
+
+    <!-- Sentence 3 -->
+    <div class="sentence-block">
+      <div class="eng-box"><span class="num">③</span> When I'm not dominated by feelings of separateness from what I'm working on, I can be said to care—a feeling of identification with the task itself, and in this state, I also see another side of caring: quality itself.</div>
+      <div class="literal">
+        <div class="literal-en">When I'm not dominated by feelings of separateness / from what I'm working on, / I can be said to care / —a feeling of identification with the task itself, / and in this state, / I also see another side of caring: / quality itself.</div>
+        <div class="literal-ko">내가 분리감에 지배되지 않을 때 / 내가 작업하고 있는 것으로부터의, / 나는 ~한다고 할 수 있다 케어한다고 / —과제 자체와의 동일시 감정, / 그리고 이 상태에서, / 나는 또한 케어의 또 다른 면을 본다: / 품질 그 자체.</div>
+      </div>
+      <ul class="grammar-bullets">
+        <li>◆ <span class="g-name">관계대명사 what (~하는 것)</span> / ▶ <span class="g-ex">what I'm working on</span> / ★ <span class="g-point">선행사 포함 관계대명사 / "the thing(s) which" — 전치사 from의 목적어</span></li>
+        <li>◆ <span class="g-name">be said to-V (~한다고 한다/할 수 있다)</span> / ▶ <span class="g-ex">I can be said to care</span> / ★ <span class="g-point">People say that I care = I can be said to care — 전환 빈출 / 5형식 say의 수동태</span></li>
+        <li>◆ <span class="g-name">재귀대명사 강조 (itself)</span> / ▶ <span class="g-ex">the task itself / quality itself</span> / ★ <span class="g-point">"바로 그 ~" 명사 강조 — 부사적 위치</span></li>
+        <li>◆ <span class="g-name">콜론(:) 부연 설명</span> / ▶ <span class="g-ex">another side of caring: quality itself</span> / ★ <span class="g-point">앞 명사구를 구체화 — 동격 콜론 용법</span></li>
+      </ul>
+    </div>
+
+    <!-- Sentence 4 -->
+    <div class="sentence-block">
+      <div class="eng-box"><span class="num">④</span> So in all tasks, the key is to cultivate a peace of mind which eases the boundary between me and my surroundings.</div>
+      <div class="literal">
+        <div class="literal-en">So in all tasks, / the key is / to cultivate a peace of mind / which eases the boundary / between me and my surroundings.</div>
+        <div class="literal-ko">그래서 모든 일에서, / 핵심은 ~이다 / 마음의 평화를 기르는 것 / 경계를 누그러뜨리는 / 나와 내 주변 사이의.</div>
+      </div>
+      <ul class="grammar-bullets">
+        <li>◆ <span class="g-name">to부정사 보어 (S + be + to-V)</span> / ▶ <span class="g-ex">the key is to cultivate ...</span> / ★ <span class="g-point">"핵심은 ~하는 것이다" — 명사적 to부정사가 주격보어</span></li>
+        <li>◆ <span class="g-name">관계대명사 which (주격)</span> / ▶ <span class="g-ex">a peace of mind which eases the boundary</span> / ★ <span class="g-point">선행사 a peace of mind 수식 / that으로 교체 가능</span></li>
+        <li>◆ <span class="g-name">between A and B (A와 B 사이)</span> / ▶ <span class="g-ex">between me and my surroundings</span> / ★ <span class="g-point">전치사구 형용사 역할 — boundary 수식</span></li>
+      </ul>
+    </div>
+
+    <!-- Sentence 5 -->
+    <div class="sentence-block">
+      <div class="eng-box"><span class="num">⑤</span> From that peace, values arise naturally.</div>
+      <div class="literal">
+        <div class="literal-en">From that peace, / values arise naturally.</div>
+        <div class="literal-ko">그 평화로부터, / 가치들이 자연스럽게 생겨난다.</div>
+      </div>
+      <ul class="grammar-bullets">
+        <li>◆ <span class="g-name">전치사구 도치 (From ... , values arise)</span> / ▶ <span class="g-ex">From that peace, values arise naturally</span> / ★ <span class="g-point">강조를 위한 전치사구 문두 배치 — 도치는 아니지만 어순 변형</span></li>
+        <li>◆ <span class="g-name">자동사 arise (생겨나다, 발생하다)</span> / ▶ <span class="g-ex">values arise naturally</span> / ★ <span class="g-point">완전자동사 — 수동태 불가 / cf. raise(타동사)와 구분</span></li>
+      </ul>
+    </div>
+
+    <!-- Sentence 6 -->
+    <div class="sentence-block">
+      <div class="eng-box"><span class="num">⑥</span> Those values then guide me to think clearly and act rightly, and the things I create or do in that state aren't just results—they're visible expressions of inner harmony.</div>
+      <div class="literal">
+        <div class="literal-en">Those values then guide me / to think clearly and act rightly, / and the things / I create or do in that state / aren't just results / —they're visible expressions of inner harmony.</div>
+        <div class="literal-ko">그 가치들은 그러면 나를 인도한다 / 명확하게 생각하고 올바르게 행동하도록, / 그리고 그 것들은 / 내가 그 상태에서 창조하거나 행하는 / 단지 결과가 아니다 / —그것들은 내적 조화의 가시적 표현이다.</div>
+      </div>
+      <ul class="grammar-bullets">
+        <li>◆ <span class="g-name">guide O to-V (5형식, O가 ~하도록 이끌다)</span> / ▶ <span class="g-ex">guide me to think clearly and act rightly</span> / ★ <span class="g-point">"O가 ~하도록 인도하다" — to-V 병렬: to think and (to) act</span></li>
+        <li>◆ <span class="g-name">관계대명사 목적격 생략</span> / ▶ <span class="g-ex">the things [(that) I create or do in that state]</span> / ★ <span class="g-point">선행사 the things 뒤 목적격 관계사 생략 — 구조 파악 핵심</span></li>
+        <li>◆ <span class="g-name">not just A—B (A뿐만 아니라 B)</span> / ▶ <span class="g-ex">aren't just results—they're visible expressions</span> / ★ <span class="g-point">대시(—)로 강조된 대조 / "not merely A but B" 변형</span></li>
+        <li>◆ <span class="g-name">부사 병렬 (clearly and rightly)</span> / ▶ <span class="g-ex">think clearly and act rightly</span> / ★ <span class="g-point">두 부사가 각각의 동사를 수식 — 병렬구조</span></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Tab 3: 핵심단어 -->
+  <div class="tab-panel" id="t166-3">
+    <h2 class="section-title">핵심단어 및 표현 (Key Vocabulary &amp; Expressions)</h2>
+    <div class="vocab-grid">
+      <div class="vocab-item"><div class="vocab-word">tune</div><div class="vocab-mean">(악기·기계를) 조율하다</div><div class="vocab-pos">v.</div><div class="vocab-deriv">tuning (n.), in tune (phr.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">render</div><div class="vocab-mean">~을 …로 만들다, ~을 주다</div><div class="vocab-pos">v.</div><div class="vocab-deriv">rendering (n.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">ritual</div><div class="vocab-mean">의식, 의례</div><div class="vocab-pos">n./adj.</div><div class="vocab-deriv">ritualistic (adj.), rite (n.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">deliberate</div><div class="vocab-mean">숙고하다 / 신중한, 의도적인</div><div class="vocab-pos">v./adj.</div><div class="vocab-deriv">deliberately (adv.), deliberation (n.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">Zen Buddhist</div><div class="vocab-mean">선불교 신자</div><div class="vocab-pos">n.</div><div class="vocab-deriv">Zen (n.), Buddhism (n.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">merge</div><div class="vocab-mean">합쳐지다, 융합되다</div><div class="vocab-pos">v.</div><div class="vocab-deriv">merger (n.), merged (adj.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">maintenance</div><div class="vocab-mean">정비, 유지 관리</div><div class="vocab-pos">n.</div><div class="vocab-deriv">maintain (v.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">unify</div><div class="vocab-mean">하나로 통합하다/되다</div><div class="vocab-pos">v.</div><div class="vocab-deriv">unification (n.), unified (adj.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">singular</div><div class="vocab-mean">단일한, 단 하나의</div><div class="vocab-pos">adj.</div><div class="vocab-deriv">singularity (n.), single (adj.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">entity</div><div class="vocab-mean">실체, 존재</div><div class="vocab-pos">n.</div><div class="vocab-deriv">—</div></div>
+      <div class="vocab-item"><div class="vocab-word">dominate</div><div class="vocab-mean">지배하다, 압도하다</div><div class="vocab-pos">v.</div><div class="vocab-deriv">domination (n.), dominant (adj.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">separateness</div><div class="vocab-mean">분리감, 단절</div><div class="vocab-pos">n.</div><div class="vocab-deriv">separate (v./adj.), separation (n.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">identification</div><div class="vocab-mean">동일시, 일체감</div><div class="vocab-pos">n.</div><div class="vocab-deriv">identify (v.), identity (n.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">cultivate</div><div class="vocab-mean">기르다, 함양하다</div><div class="vocab-pos">v.</div><div class="vocab-deriv">cultivation (n.), cultivated (adj.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">peace of mind</div><div class="vocab-mean">마음의 평화, 평온</div><div class="vocab-pos">n.phr.</div><div class="vocab-deriv">peaceful (adj.), peacefully (adv.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">ease</div><div class="vocab-mean">완화하다 / 편안함</div><div class="vocab-pos">v./n.</div><div class="vocab-deriv">easy (adj.), easily (adv.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">boundary</div><div class="vocab-mean">경계, 한계</div><div class="vocab-pos">n.</div><div class="vocab-deriv">bound (v./adj.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">arise</div><div class="vocab-mean">생겨나다, 발생하다</div><div class="vocab-pos">v.</div><div class="vocab-deriv">arose (과거), arisen (과거분사)</div></div>
+      <div class="vocab-item"><div class="vocab-word">harmony</div><div class="vocab-mean">조화</div><div class="vocab-pos">n.</div><div class="vocab-deriv">harmonious (adj.), harmonize (v.)</div></div>
+    </div>
+  </div>
+
+  <!-- Tab 4: 전문해석 -->
+  <div class="tab-panel" id="t166-4">
+    <h2 class="section-title">전문해석 (Full Translation)</h2>
+    <div class="translation">
+      오토바이를 수도 없이 조율해 온 일은 어느새 그 작업을 일종의 의식(ritual)으로 만들어 놓았다. 더 이상 어떻게 그것을 수행할지 깊이 고민할 필요가 없을 정도가 되었다. 더 나아가, 선불교 수행자들이 자아와 대상이 하나로 녹아드는 <i>'그저 앉기(just sitting)'</i> 수행을 하듯, 나는 오토바이 정비를 기계와 내가 하나의 실체로 통합되는 <i>'그저 고치기(just fixing)'</i>의 수행으로 바라볼 수 있다. 내가 작업하는 대상으로부터의 분리감에 휘둘리지 않을 때, 나는 비로소 진정으로 '신경 쓴다(care)'고 말할 수 있다 — 즉 그 작업 자체와 하나가 되는 동일시의 감정이며, 바로 이 상태에서 나는 케어의 또 다른 면, 곧 <b>'질(quality) 그 자체'</b>를 보게 된다. 그러므로 모든 일에서 핵심은, 나와 주변 환경 사이의 경계를 누그러뜨리는 <b>마음의 평화(peace of mind)</b>를 기르는 것이다. 그 평화로부터 가치(values)는 자연스럽게 솟아난다. 그리고 그 가치들은 나를 명확하게 사고하고 올바르게 행동하도록 이끌며, 그 상태에서 내가 만들거나 행하는 것들은 단지 '결과물'이 아니다 — 그것들은 <b>내면의 조화가 눈에 보이는 형태로 표현된 것</b>이다.
+    </div>
+  </div>
+
+  <!-- Tab 5: 주제/요지 -->
+  <div class="tab-panel" id="t166-5">
+    <h2 class="section-title">주제 · 요지 · 구조</h2>
+    <div class="theme-card">
+      <h3>주제 (Topic)</h3>
+      <p>일과 자아의 일체감(care)을 통한 질(quality)과 내적 조화의 추구</p>
+    </div>
+    <div class="theme-card">
+      <h3>요지 (Main Idea)</h3>
+      <p>오토바이 정비처럼 반복된 작업은 의식이 되며, 선불교의 '그저 앉기'처럼 자아와 대상의 경계가 사라질 때 우리는 진정으로 '케어'하게 된다. 모든 일의 핵심은 자아와 주변의 경계를 누그러뜨리는 마음의 평화를 기르는 것이며, 그 평화로부터 가치가 솟아나 명확한 사고와 올바른 행동을 이끈다. 그 상태에서 만들어진 결과물은 단순한 산물이 아니라 내적 조화의 가시적 표현이다.</p>
+    </div>
+    <div class="theme-card">
+      <h3>구조 흐름 (Structure)</h3>
+      <div class="structure-flow">
+        <div class="flow-step"><b>도입 — 개인 경험 (①):</b> 반복된 오토바이 조율 → 의식(ritual)이 됨, 더 이상 숙고 불필요.</div>
+        <div class="flow-step"><b>비유 — 선불교 (②):</b> '그저 앉기'에서 자아·대상 합일처럼, 정비 또한 기계와 자아의 통합.</div>
+        <div class="flow-step"><b>핵심 개념 — 케어 (③):</b> 분리감 없을 때 진정한 '케어' 가능 → 그 안에서 '질(quality)' 자체가 드러남.</div>
+        <div class="flow-step"><b>일반화 (④):</b> 모든 일의 열쇠 = 자아·환경의 경계를 누그러뜨리는 마음의 평화.</div>
+        <div class="flow-step"><b>결론 (⑤⑥):</b> 평화→가치→명확한 사고·올바른 행동 → 결과물은 내적 조화의 가시적 표현.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab 6: 배경지식 -->
+  <div class="tab-panel" id="t166-6">
+    <h2 class="section-title">배경지식 (Background Knowledge)</h2>
+    <div class="bg-content">
+      <h3>🏍️ "Zen and the Art of Motorcycle Maintenance"</h3>
+      <p>이 지문은 미국 작가 <b>Robert M. Pirsig(1928~2017)</b>의 1974년 베스트셀러 <i>『선과 모터사이클 관리술』(Zen and the Art of Motorcycle Maintenance)</i>의 핵심 사상을 압축한 글이다. 이 책은 아버지와 아들이 모터사이클로 미국 서부를 횡단하는 여행기 형식을 빌려, <b>'질(Quality)'이란 무엇인가</b>라는 형이상학적 질문을 탐구한다.</p>
+
+      <h3>🧘 '그저 앉기' (Just Sitting · 只管打坐 / Shikantaza)</h3>
+      <p>일본 조동종(曹洞宗) 선불교의 핵심 수행법. 어떠한 화두나 목표 없이 그저 앉아 있는 행위 자체에 완전히 몰입함으로써, 수행자와 수행 대상 사이의 분리가 사라지는 상태를 추구한다. Pirsig는 이를 일상 노동에 적용해 <b>'그저 고치기(just fixing)'</b>라는 개념을 만들어냈다.</p>
+
+      <h3>💎 Quality(질) — Pirsig의 핵심 개념</h3>
+      <p>Pirsig는 'Quality'를 단순히 '품질'로 정의하지 않는다. 그에게 Quality는 <b>주관과 객관이 분리되기 이전의 직접 경험</b>이다. 작업자가 자신과 대상의 경계를 잊고 작업에 완전히 몰입할 때, 객관적 결과(완성도)와 주관적 만족(케어)이 동시에 솟아나는 그 통합된 순간이 바로 Quality이다.</p>
+
+      <h3>🔧 'Caring(관심·정성)'의 진짜 의미</h3>
+      <p>본문에서 "I can be said to care"는 영어 'care'의 두 가지 의미가 결합된 표현이다 — ① <b>(작업에) 마음을 쏟다</b>, ② <b>(대상을) 소중히 여기다</b>. Pirsig에게 진정한 care는 작업 대상과 자신을 동일시(identification)할 때 비로소 가능하며, 이때 작업의 질도 함께 향상된다고 본다.</p>
+
+      <h3>🌊 동양 사상과의 연결</h3>
+      <p>본문의 사상은 동양 철학과도 깊이 연결된다. <i>장자(莊子)</i>의 '포정해우(庖丁解牛)' 일화 — 소를 잡는 백정이 19년간 단 한 자루의 칼만으로 작업할 수 있는 이유가 "기술이 도(道)와 합쳐졌기 때문"이라는 — 도 같은 통찰을 담고 있다. 도가(道家)의 '무위자연(無爲自然)', 유가(儒家)의 '성(誠)' 개념과도 맞닿는다.</p>
+
+      <h3>💡 현대적 함의 — 플로우(Flow) 이론</h3>
+      <p>심리학자 <b>Mihaly Csikszentmihalyi</b>의 '플로우(flow)' 개념도 본문과 직접 연결된다. 자아 의식이 사라지고 활동 자체에 완전히 몰입한 상태에서 최고의 수행력과 만족감이 나온다는 점에서, Pirsig의 통찰을 현대 심리학이 실증적으로 뒷받침한 셈이다.</p>
+    </div>
+  </div>
+
+  <!-- Tab 7: 변형문제 -->
+  <div class="tab-panel" id="t166-7">
+    <h2 class="section-title">변형문제 (Practice Questions)</h2>
+
+    <!-- Q1: 주제 추론 -->
+    <div class="quiz-q">
+      <div class="quiz-q-title">1. 다음 글의 주제로 가장 적절한 것은?</div>
+      <div class="quiz-opts">
+        <button class="quiz-opt" onclick="check('q166-1', this, false)">① 효율적인 오토바이 정비를 위한 실용적 기술의 단계</button>
+        <button class="quiz-opt" onclick="check('q166-1', this, false)">② 선불교 명상이 신체 건강에 미치는 과학적 효과</button>
+        <button class="quiz-opt" onclick="check('q166-1', this, true)">③ 자아와 대상의 경계를 허무는 마음의 평화를 통한 진정한 일의 가치 추구</button>
+        <button class="quiz-opt" onclick="check('q166-1', this, false)">④ 반복 작업이 창의성에 미치는 부정적 영향</button>
+        <button class="quiz-opt" onclick="check('q166-1', this, false)">⑤ 동양 종교와 서양 기술의 양립 불가능성</button>
+      </div>
+      <div class="quiz-feedback" id="fb-q166-1"></div>
+      <button class="reset-btn" onclick="resetQuiz('q166-1')">↺ 다시 풀기</button>
+    </div>
+
+    <!-- Q2: 빈칸 추론 -->
+    <div class="quiz-q">
+      <div class="quiz-q-title">2. 다음 빈칸에 들어갈 말로 가장 적절한 것은?</div>
+      <div class="quiz-q-text"><span class="eng">So in all tasks, the key is to cultivate a peace of mind which <b>____________________</b> the boundary between me and my surroundings.</span></div>
+      <div class="quiz-opts">
+        <button class="quiz-opt" onclick="check('q166-2', this, false)">① reinforces</button>
+        <button class="quiz-opt" onclick="check('q166-2', this, false)">② defines</button>
+        <button class="quiz-opt" onclick="check('q166-2', this, true)">③ eases</button>
+        <button class="quiz-opt" onclick="check('q166-2', this, false)">④ protects</button>
+        <button class="quiz-opt" onclick="check('q166-2', this, false)">⑤ measures</button>
+      </div>
+      <div class="quiz-feedback" id="fb-q166-2"></div>
+      <button class="reset-btn" onclick="resetQuiz('q166-2')">↺ 다시 풀기</button>
+    </div>
+
+    <!-- Q3: 어법 -->
+    <div class="quiz-q">
+      <div class="quiz-q-title">3. 다음 밑줄 친 부분 중, 어법상 틀린 것은?</div>
+      <div class="quiz-q-text"><span class="eng">Tuning the motorcycle so many times <b>① has rendered</b> it a ritual; I no longer need to deliberate on how to perform it. Just as Zen Buddhists practice just sitting, <b>② where</b> self and object merge, I can see motorcycle maintenance as just fixing. When I'm not dominated by feelings of separateness from <b>③ what</b> I'm working on, I can be said to care. So in all tasks, the key <b>④ are</b> to cultivate a peace of mind which eases the boundary. From that peace, values <b>⑤ arise</b> naturally.</span></div>
+      <div class="quiz-opts">
+        <button class="quiz-opt" onclick="check('q166-3', this, false)">①</button>
+        <button class="quiz-opt" onclick="check('q166-3', this, false)">②</button>
+        <button class="quiz-opt" onclick="check('q166-3', this, false)">③</button>
+        <button class="quiz-opt" onclick="check('q166-3', this, true)">④ are → is</button>
+        <button class="quiz-opt" onclick="check('q166-3', this, false)">⑤</button>
+      </div>
+      <div class="quiz-feedback" id="fb-q166-3"></div>
+      <button class="reset-btn" onclick="resetQuiz('q166-3')">↺ 다시 풀기</button>
+    </div>
+
+    <!-- Q4: 내용 불일치 -->
+    <div class="quiz-q">
+      <div class="quiz-q-title">4. 본문의 내용과 일치하지 않는 것은?</div>
+      <div class="quiz-opts">
+        <button class="quiz-opt" onclick="check('q166-4', this, false)">① 오토바이를 여러 번 조율해 온 일은 일종의 의식이 되었다.</button>
+        <button class="quiz-opt" onclick="check('q166-4', this, false)">② 선불교 수행자의 '그저 앉기'에서는 자아와 대상이 합쳐진다.</button>
+        <button class="quiz-opt" onclick="check('q166-4', this, true)">③ 작업 대상과의 분리감이 강할 때 비로소 진정한 케어가 가능하다.</button>
+        <button class="quiz-opt" onclick="check('q166-4', this, false)">④ 모든 일의 핵심은 자아와 주변의 경계를 누그러뜨리는 마음의 평화를 기르는 것이다.</button>
+        <button class="quiz-opt" onclick="check('q166-4', this, false)">⑤ 평화에서 솟아난 가치들은 명확한 사고와 올바른 행동을 이끈다.</button>
+      </div>
+      <div class="quiz-feedback" id="fb-q166-4"></div>
+      <button class="reset-btn" onclick="resetQuiz('q166-4')">↺ 다시 풀기</button>
+    </div>
+
+    <!-- Q5: 글의 순서 -->
+    <div class="quiz-q">
+      <div class="quiz-q-title">5. 다음 글 다음에 이어질 글의 순서로 가장 적절한 것은?</div>
+      <div class="quiz-q-text">
+        <span class="eng">Tuning the motorcycle so many times has rendered it a ritual; I no longer need to deliberate on how to perform it.</span><br><br>
+        <b>(A)</b> <span class="eng">So in all tasks, the key is to cultivate a peace of mind which eases the boundary between me and my surroundings. From that peace, values arise naturally.</span><br><br>
+        <b>(B)</b> <span class="eng">In addition, just as Zen Buddhists practice just sitting, where self and object merge, I can see motorcycle maintenance as just fixing, where the machine and I unify into a singular entity.</span><br><br>
+        <b>(C)</b> <span class="eng">When I'm not dominated by feelings of separateness from what I'm working on, I can be said to care—a feeling of identification with the task itself, and in this state, I also see another side of caring: quality itself.</span>
+      </div>
+      <div class="quiz-opts">
+        <button class="quiz-opt" onclick="check('q166-5', this, false)">① (A) - (B) - (C)</button>
+        <button class="quiz-opt" onclick="check('q166-5', this, false)">② (A) - (C) - (B)</button>
+        <button class="quiz-opt" onclick="check('q166-5', this, false)">③ (B) - (A) - (C)</button>
+        <button class="quiz-opt" onclick="check('q166-5', this, true)">④ (B) - (C) - (A)</button>
+        <button class="quiz-opt" onclick="check('q166-5', this, false)">⑤ (C) - (B) - (A)</button>
+      </div>
+      <div class="quiz-feedback" id="fb-q166-5"></div>
+      <button class="reset-btn" onclick="resetQuiz('q166-5')">↺ 다시 풀기</button>
+    </div>
+
+    <!-- 서술형 -->
+    <h2 class="section-title" style="margin-top:35px;">📝 서술형 (Writing)</h2>
+
+    <div class="essay-q">
+      <div class="essay-q-title">[서술형 1] 빈칸 요약 — 본문의 핵심을 다음 한 문장으로 완성하시오.</div>
+      <div class="essay-cond">조건: 본문에 등장한 단어를 활용하여 각 빈칸에 한 단어씩 쓰시오.</div>
+      <div class="essay-text"><span class="eng">When the feeling of <b>(1) ______________</b> from a task disappears, a person truly cares and sees quality itself; cultivating a peace of mind that eases the <b>(2) ______________</b> between self and surroundings is therefore the key in all tasks.</span></div>
+      <textarea class="essay-input" placeholder="(1)과 (2)에 들어갈 단어를 각각 쓰세요."></textarea>
+      <button class="toggle-ans-btn" onclick="toggleAns('ans166-1')">모범답안 보기 ▼</button>
+      <div class="model-ans" id="ans166-1">
+        <b>모범답안:</b> (1) <b>separateness</b> &nbsp; (2) <b>boundary</b><br>
+        <b>해설:</b> 본문 ③번 문장 "When I'm not dominated by feelings of <b>separateness</b> from what I'm working on"과 ④번 문장 "eases the <b>boundary</b> between me and my surroundings"에서 직접 인용. 두 단어는 본문의 핵심 개념(분리감의 해소 → 진정한 케어)을 압축한다.
+      </div>
+    </div>
+
+    <div class="essay-q">
+      <div class="essay-q-title">[서술형 2] 본문에서 필자가 '오토바이 정비'와 '선불교 수행'을 연결 짓는 이유를 한국어로 서술하시오.</div>
+      <div class="essay-cond">조건: 한국어 두 문장 이내로 작성할 것. 두 활동의 공통된 본질('자아와 대상의 합일')이 반드시 포함되어야 함.</div>
+      <textarea class="essay-input" placeholder="답안을 작성하세요."></textarea>
+      <button class="toggle-ans-btn" onclick="toggleAns('ans166-2')">모범답안 보기 ▼</button>
+      <div class="model-ans" id="ans166-2">
+        <b>모범답안:</b> 선불교 수행자가 '그저 앉기'에서 자아와 대상이 하나로 융합되는 경험을 추구하듯, 필자는 오토바이 정비를 '그저 고치기'로 보아 기계와 자신이 하나의 실체로 통합되는 수행으로 여긴다. 두 활동 모두 작업자와 작업 대상 사이의 분리감을 해소하고 일체감을 이룬다는 점에서 본질적으로 같은 수행이라고 보는 것이다.<br><br>
+        <b>채점 포인트:</b> ① 선불교 '그저 앉기'와 정비 '그저 고치기'의 대응 관계 명시 ② 자아와 대상(기계)의 합일/통합이 두 활동의 공통 본질임을 명시
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ===== Passage 167 ===== -->
+<div class="passage-panel" id="p167">
+  <div class="passage-num">PASSAGE 167</div>
+  <h1 class="passage-title">Active vs. Latent Errors and the Swiss Cheese Model</h1>
+
+  <div class="tabs">
+    <button class="tab-btn active" onclick="showTab(167,1)">① 전문</button>
+    <button class="tab-btn" onclick="showTab(167,2)">② 문장분석</button>
+    <button class="tab-btn" onclick="showTab(167,3)">③ 핵심단어</button>
+    <button class="tab-btn" onclick="showTab(167,4)">④ 전문해석</button>
+    <button class="tab-btn" onclick="showTab(167,5)">⑤ 주제·요지</button>
+    <button class="tab-btn" onclick="showTab(167,6)">⑥ 배경지식</button>
+    <button class="tab-btn" onclick="showTab(167,7)">⑦ 변형문제</button>
+  </div>
+
+  <!-- Tab 1: 전문 -->
+  <div class="tab-panel active" id="t167-1">
+    <h2 class="section-title">전문 (Full Passage)</h2>
+    <div class="full-passage-box">
+      <span class="sent-num">①</span> Active errors in traffic are immediate human mistakes—like speeding, pressing the wrong pedal, or turning onto a one-way street. <span class="sent-num">②</span> In contrast, latent errors are hidden system flaws like straight highways and wide lanes that entice speeding. <span class="sent-num">③</span> A journalist notes that latent errors pose the greatest threat to the safety of a complex system, but they are difficult to quantify. <span class="sent-num">④</span> The Swiss cheese model helps explain why: Latent errors are like holes in stacked cheese slices. <span class="sent-num">⑤</span> A crash occurs only when the holes align, allowing an active error to pass through. <span class="sent-num">⑥</span> Consider a right turn at an intersection. <span class="sent-num">⑦</span> Most of the time, the holes don't align—there may be no pedestrian, or the driver may have time to scan. <span class="sent-num">⑧</span> But when latent design errors align just right, we have the perfect conditions for a driver to "accidentally" cause catastrophic consequences. <span class="sent-num">⑨</span> Yet, because latent errors are inherently hard to see, the active error remains the most visible. <span class="sent-num">⑩</span> That's the error that gets recorded and analyzed. <span class="sent-num">⑪</span> Ignoring them keeps us spinning our wheels, never making progress on real road safety improvements.
+    </div>
+  </div>
+
+  <!-- Tab 2: 문장분석 -->
+  <div class="tab-panel" id="t167-2">
+    <h2 class="section-title">문장분석 (Sentence-by-Sentence Analysis)</h2>
+
+    <!-- Sentence 1 -->
+    <div class="sentence-block">
+      <div class="eng-box"><span class="num">①</span> Active errors in traffic are immediate human mistakes—like speeding, pressing the wrong pedal, or turning onto a one-way street.</div>
+      <div class="literal">
+        <div class="literal-en">Active errors in traffic / are immediate human mistakes / —like speeding, pressing the wrong pedal, / or turning onto a one-way street.</div>
+        <div class="literal-ko">교통에서의 능동적 오류는 / 즉각적인 인간의 실수다 / —예를 들어 과속, 잘못된 페달을 밟는 것, / 또는 일방통행 도로로 회전하는 것 같은.</div>
+      </div>
+      <ul class="grammar-bullets">
+        <li>◆ <span class="g-name">동격 대시(—)</span> / ▶ <span class="g-ex">human mistakes—like speeding ...</span> / ★ <span class="g-point">앞 명사구의 구체적 예시 제시 — like(예시 전치사) 도입</span></li>
+        <li>◆ <span class="g-name">동명사구 병렬 (A, B, or C)</span> / ▶ <span class="g-ex">speeding, pressing the wrong pedal, or turning</span> / ★ <span class="g-point">전치사 like의 목적어로 3개 동명사구 병렬 — 어법 출제 핵심</span></li>
+        <li>◆ <span class="g-name">turn onto N (~로 진입하다/회전하다)</span> / ▶ <span class="g-ex">turning onto a one-way street</span> / ★ <span class="g-point">turn into(~이 되다)와 구분 — 동사구 의미 차이</span></li>
+      </ul>
+    </div>
+
+    <!-- Sentence 2 -->
+    <div class="sentence-block">
+      <div class="eng-box"><span class="num">②</span> In contrast, latent errors are hidden system flaws like straight highways and wide lanes that entice speeding.</div>
+      <div class="literal">
+        <div class="literal-en">In contrast, / latent errors are hidden system flaws / like straight highways and wide lanes / that entice speeding.</div>
+        <div class="literal-ko">대조적으로, / 잠재적 오류는 숨겨진 시스템 결함이다 / 직선 고속도로와 넓은 차선과 같은 / 과속을 유도하는.</div>
+      </div>
+      <ul class="grammar-bullets">
+        <li>◆ <span class="g-name">In contrast (대조 연결어)</span> / ▶ <span class="g-ex">In contrast, latent errors are ...</span> / ★ <span class="g-point">①의 active errors와 대조 도입 — 글의 핵심 개념 비교 신호</span></li>
+        <li>◆ <span class="g-name">과거분사 형용사 (hidden)</span> / ▶ <span class="g-ex">hidden system flaws</span> / ★ <span class="g-point">"숨겨진 결함" — hide의 과거분사가 명사 전치 수식</span></li>
+        <li>◆ <span class="g-name">관계대명사 that (주격)</span> / ▶ <span class="g-ex">straight highways and wide lanes that entice speeding</span> / ★ <span class="g-point">선행사 highways and wide lanes 수식 / 복수 선행사 → 동사 entice (수일치)</span></li>
+        <li>◆ <span class="g-name">entice O (to-V) / 동명사 (~을 유혹하다)</span> / ▶ <span class="g-ex">entice speeding</span> / ★ <span class="g-point">"~을 부추기다, 유도하다" — encourage/induce와 동의</span></li>
+      </ul>
+    </div>
+
+    <!-- Sentence 3 -->
+    <div class="sentence-block">
+      <div class="eng-box"><span class="num">③</span> A journalist notes that latent errors pose the greatest threat to the safety of a complex system, but they are difficult to quantify.</div>
+      <div class="literal">
+        <div class="literal-en">A journalist notes / that latent errors pose the greatest threat / to the safety of a complex system, / but they are difficult to quantify.</div>
+        <div class="literal-ko">한 기자는 지적한다 / 잠재적 오류가 가장 큰 위협을 제기한다고 / 복잡한 시스템의 안전에, / 그러나 그것들은 수량화하기 어렵다.</div>
+      </div>
+      <ul class="grammar-bullets">
+        <li>◆ <span class="g-name">명사절 접속사 that</span> / ▶ <span class="g-ex">notes that latent errors pose ...</span> / ★ <span class="g-point">notes의 목적어 절 / "~라고 지적/주목하다"</span></li>
+        <li>◆ <span class="g-name">pose a threat to N (~에 위협을 제기하다)</span> / ▶ <span class="g-ex">pose the greatest threat to the safety</span> / ★ <span class="g-point">관용표현 — 어휘 빈출 / present a threat과 동의</span></li>
+        <li>◆ <span class="g-name">tough 구문 (be 형용사 to-V)</span> / ▶ <span class="g-ex">they are difficult to quantify</span> / ★ <span class="g-point">"수량화하기 어렵다" — to-V가 difficult를 한정 / 의미상 목적어=they(=latent errors)</span></li>
+      </ul>
+    </div>
+
+    <!-- Sentence 4 -->
+    <div class="sentence-block">
+      <div class="eng-box"><span class="num">④</span> The Swiss cheese model helps explain why: Latent errors are like holes in stacked cheese slices.</div>
+      <div class="literal">
+        <div class="literal-en">The Swiss cheese model / helps explain why: / Latent errors are like holes / in stacked cheese slices.</div>
+        <div class="literal-ko">스위스 치즈 모델은 / 그 이유를 설명하는 데 도움을 준다: / 잠재적 오류는 구멍과 같다 / 쌓인 치즈 조각들 안의.</div>
+      </div>
+      <ul class="grammar-bullets">
+        <li>◆ <span class="g-name">help (to) V (원형부정사/to부정사)</span> / ▶ <span class="g-ex">helps explain why</span> / ★ <span class="g-point">help는 to 생략 가능 — helps to explain / helps explain 둘 다 가능</span></li>
+        <li>◆ <span class="g-name">의문사절 명사절 (why)</span> / ▶ <span class="g-ex">helps explain why</span> / ★ <span class="g-point">explain의 목적어 — 뒤 절 생략된 간접의문문 ("why latent errors are so dangerous")</span></li>
+        <li>◆ <span class="g-name">과거분사 형용사 (stacked)</span> / ▶ <span class="g-ex">stacked cheese slices</span> / ★ <span class="g-point">"쌓인 치즈 조각" — stack의 과거분사가 명사 수식</span></li>
+      </ul>
+    </div>
+
+    <!-- Sentence 5 -->
+    <div class="sentence-block">
+      <div class="eng-box"><span class="num">⑤</span> A crash occurs only when the holes align, allowing an active error to pass through.</div>
+      <div class="literal">
+        <div class="literal-en">A crash occurs / only when the holes align, / allowing an active error / to pass through.</div>
+        <div class="literal-ko">충돌은 발생한다 / 오직 구멍들이 정렬될 때만, / 능동적 오류가 ~하도록 허용하면서 / 통과하도록.</div>
+      </div>
+      <ul class="grammar-bullets">
+        <li>◆ <span class="g-name">only when S+V (오직 ~할 때만)</span> / ▶ <span class="g-ex">only when the holes align</span> / ★ <span class="g-point">시간 부사절 강조 — 문두에 오면 도치 발생 / 본문은 일반 어순</span></li>
+        <li>◆ <span class="g-name">분사구문 (능동, 결과)</span> / ▶ <span class="g-ex">allowing an active error to pass through</span> / ★ <span class="g-point">콤마 + 분사 = "그래서 ~하게 된다" — 결과 분사구문</span></li>
+        <li>◆ <span class="g-name">allow O to-V (5형식)</span> / ▶ <span class="g-ex">allowing an active error to pass through</span> / ★ <span class="g-point">"O가 ~하도록 허용하다" — 빈출 5형식</span></li>
+      </ul>
+    </div>
+
+    <!-- Sentence 6 -->
+    <div class="sentence-block">
+      <div class="eng-box"><span class="num">⑥</span> Consider a right turn at an intersection.</div>
+      <div class="literal">
+        <div class="literal-en">Consider a right turn / at an intersection.</div>
+        <div class="literal-ko">우회전을 생각해 보자 / 교차로에서의.</div>
+      </div>
+      <ul class="grammar-bullets">
+        <li>◆ <span class="g-name">명령문 도입 (Consider ~)</span> / ▶ <span class="g-ex">Consider a right turn</span> / ★ <span class="g-point">"~을 생각해 보라" — 예시 도입 신호 / Imagine/Take/Suppose 등과 같은 기능</span></li>
+        <li>◆ <span class="g-name">전치사구 후치수식 (at an intersection)</span> / ▶ <span class="g-ex">a right turn at an intersection</span> / ★ <span class="g-point">전치사구가 명사 a right turn 수식 — 형용사 역할</span></li>
+      </ul>
+    </div>
+
+    <!-- Sentence 7 -->
+    <div class="sentence-block">
+      <div class="eng-box"><span class="num">⑦</span> Most of the time, the holes don't align—there may be no pedestrian, or the driver may have time to scan.</div>
+      <div class="literal">
+        <div class="literal-en">Most of the time, / the holes don't align— / there may be no pedestrian, / or the driver may have time / to scan.</div>
+        <div class="literal-ko">대부분의 경우, / 구멍들은 정렬되지 않는다— / 보행자가 없을 수도 있고, / 또는 운전자가 시간을 가질 수도 있다 / 살펴볼.</div>
+      </div>
+      <ul class="grammar-bullets">
+        <li>◆ <span class="g-name">There be 구문 (~이 있다)</span> / ▶ <span class="g-ex">there may be no pedestrian</span> / ★ <span class="g-point">조동사 may + be / 부정 표현 no + 명사</span></li>
+        <li>◆ <span class="g-name">to부정사 형용사 용법</span> / ▶ <span class="g-ex">time to scan</span> / ★ <span class="g-point">"살펴볼 시간" — time 수식하는 to부정사 / 형용사적 용법 빈출</span></li>
+        <li>◆ <span class="g-name">대시(—) 부연 설명</span> / ▶ <span class="g-ex">align—there may be no pedestrian, or ...</span> / ★ <span class="g-point">앞 절의 추상적 진술을 구체적 예시로 풀어줌</span></li>
+      </ul>
+    </div>
+
+    <!-- Sentence 8 -->
+    <div class="sentence-block">
+      <div class="eng-box"><span class="num">⑧</span> But when latent design errors align just right, we have the perfect conditions for a driver to "accidentally" cause catastrophic consequences.</div>
+      <div class="literal">
+        <div class="literal-en">But when latent design errors align just right, / we have the perfect conditions / for a driver / to "accidentally" cause / catastrophic consequences.</div>
+        <div class="literal-ko">그러나 잠재적 설계 오류가 딱 맞게 정렬될 때, / 우리는 완벽한 조건을 갖게 된다 / 운전자가 / "우연히" 야기할 / 재앙적 결과를.</div>
+      </div>
+      <ul class="grammar-bullets">
+        <li>◆ <span class="g-name">시간 부사절 (when S+V)</span> / ▶ <span class="g-ex">when latent design errors align just right</span> / ★ <span class="g-point">조건적 시간 표현 — "~할 때 = ~한다면" 가까운 의미</span></li>
+        <li>◆ <span class="g-name">for + 의미상 주어 + to-V</span> / ▶ <span class="g-ex">conditions for a driver to "accidentally" cause</span> / ★ <span class="g-point">"운전자가 ~하기 위한/하기 좋은 조건" — to부정사의 의미상 주어 빈출</span></li>
+        <li>◆ <span class="g-name">부사 just (꼭, 딱)</span> / ▶ <span class="g-ex">align just right</span> / ★ <span class="g-point">"딱 맞게" — 부사 just가 형용사 right 강조</span></li>
+        <li>◆ <span class="g-name">아이러니 표시 따옴표 (scare quotes)</span> / ▶ <span class="g-ex">to "accidentally" cause</span> / ★ <span class="g-point">"실제로는 우연이 아니라는" 비꼼/유보적 의미 — 작가의 태도 신호</span></li>
+      </ul>
+    </div>
+
+    <!-- Sentence 9 -->
+    <div class="sentence-block">
+      <div class="eng-box"><span class="num">⑨</span> Yet, because latent errors are inherently hard to see, the active error remains the most visible.</div>
+      <div class="literal">
+        <div class="literal-en">Yet, / because latent errors are inherently hard to see, / the active error remains the most visible.</div>
+        <div class="literal-ko">그러나, / 잠재적 오류는 본질적으로 보기 어렵기 때문에, / 능동적 오류가 가장 잘 보이는 채로 남는다.</div>
+      </div>
+      <ul class="grammar-bullets">
+        <li>◆ <span class="g-name">역접 부사 Yet (그러나)</span> / ▶ <span class="g-ex">Yet, because latent errors ...</span> / ★ <span class="g-point">However와 동의 — 글의 흐름 반전 신호</span></li>
+        <li>◆ <span class="g-name">tough 구문 (hard to see)</span> / ▶ <span class="g-ex">hard to see</span> / ★ <span class="g-point">"보기 어려운" — 형용사 + to-V 보어 / 의미상 목적어=latent errors</span></li>
+        <li>◆ <span class="g-name">불완전자동사 remain + 보어</span> / ▶ <span class="g-ex">remains the most visible</span> / ★ <span class="g-point">"~인 채로 남다" — 2형식 동사 / 보어로 형용사·최상급 가능</span></li>
+      </ul>
+    </div>
+
+    <!-- Sentence 10 -->
+    <div class="sentence-block">
+      <div class="eng-box"><span class="num">⑩</span> That's the error that gets recorded and analyzed.</div>
+      <div class="literal">
+        <div class="literal-en">That's the error / that gets recorded and analyzed.</div>
+        <div class="literal-ko">그것이 바로 그 오류이다 / 기록되고 분석되는.</div>
+      </div>
+      <ul class="grammar-bullets">
+        <li>◆ <span class="g-name">관계대명사 that (주격, 강조 구문)</span> / ▶ <span class="g-ex">That's the error that gets recorded ...</span> / ★ <span class="g-point">선행사 the error 수식 — "It is ~ that ..." 강조 구문 변형</span></li>
+        <li>◆ <span class="g-name">get + p.p. (수동태, ~당하다)</span> / ▶ <span class="g-ex">gets recorded and analyzed</span> / ★ <span class="g-point">"기록되고 분석된다" — be동사 대신 get + 과거분사 (구어체 수동) / 병렬</span></li>
+      </ul>
+    </div>
+
+    <!-- Sentence 11 -->
+    <div class="sentence-block">
+      <div class="eng-box"><span class="num">⑪</span> Ignoring them keeps us spinning our wheels, never making progress on real road safety improvements.</div>
+      <div class="literal">
+        <div class="literal-en">Ignoring them / keeps us spinning our wheels, / never making progress / on real road safety improvements.</div>
+        <div class="literal-ko">그것들을 무시하는 것은 / 우리를 헛바퀴를 돌리고 있게 한다, / 결코 진전을 이루지 못하면서 / 진정한 도로 안전 개선에서.</div>
+      </div>
+      <ul class="grammar-bullets">
+        <li>◆ <span class="g-name">동명사 주어 (Ignoring them)</span> / ▶ <span class="g-ex">Ignoring them keeps us ...</span> / ★ <span class="g-point">동명사 주어 → 단수 동사 keeps / 수일치 함정</span></li>
+        <li>◆ <span class="g-name">keep O V-ing (5형식, ~을 계속 …하게 하다)</span> / ▶ <span class="g-ex">keeps us spinning our wheels</span> / ★ <span class="g-point">"O가 계속 ~하도록 만들다" — 5형식 분사 보어</span></li>
+        <li>◆ <span class="g-name">spin one's wheels (관용표현, 헛수고하다)</span> / ▶ <span class="g-ex">spinning our wheels</span> / ★ <span class="g-point">"헛바퀴를 돌리다" = 진전 없이 시간만 보내다 — 어휘 빈출</span></li>
+        <li>◆ <span class="g-name">분사구문 (능동, 동시상황)</span> / ▶ <span class="g-ex">never making progress on ...</span> / ★ <span class="g-point">"결코 ~하지 못한 채" — 부정어 never + 분사 / "and never make"로 환원 가능</span></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Tab 3: 핵심단어 -->
+  <div class="tab-panel" id="t167-3">
+    <h2 class="section-title">핵심단어 및 표현 (Key Vocabulary &amp; Expressions)</h2>
+    <div class="vocab-grid">
+      <div class="vocab-item"><div class="vocab-word">active error</div><div class="vocab-mean">능동적 오류 (즉각적 실수)</div><div class="vocab-pos">n.</div><div class="vocab-deriv">activity (n.), activate (v.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">latent</div><div class="vocab-mean">잠재적인, 숨어 있는</div><div class="vocab-pos">adj.</div><div class="vocab-deriv">latency (n.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">immediate</div><div class="vocab-mean">즉각적인, 직접적인</div><div class="vocab-pos">adj.</div><div class="vocab-deriv">immediately (adv.), immediacy (n.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">speeding</div><div class="vocab-mean">과속</div><div class="vocab-pos">n.</div><div class="vocab-deriv">speed (n./v.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">flaw</div><div class="vocab-mean">결함, 결점</div><div class="vocab-pos">n.</div><div class="vocab-deriv">flawed (adj.), flawless (adj.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">entice</div><div class="vocab-mean">유혹하다, 부추기다</div><div class="vocab-pos">v.</div><div class="vocab-deriv">enticement (n.), enticing (adj.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">pose a threat</div><div class="vocab-mean">위협을 제기하다</div><div class="vocab-pos">v.phr.</div><div class="vocab-deriv">threat (n.), threaten (v.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">quantify</div><div class="vocab-mean">수량화하다, 정량화하다</div><div class="vocab-pos">v.</div><div class="vocab-deriv">quantity (n.), quantitative (adj.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">stacked</div><div class="vocab-mean">쌓여 있는, 적층된</div><div class="vocab-pos">adj.</div><div class="vocab-deriv">stack (n./v.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">align</div><div class="vocab-mean">정렬되다, 일직선이 되다</div><div class="vocab-pos">v.</div><div class="vocab-deriv">alignment (n.), aligned (adj.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">intersection</div><div class="vocab-mean">교차로</div><div class="vocab-pos">n.</div><div class="vocab-deriv">intersect (v.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">pedestrian</div><div class="vocab-mean">보행자</div><div class="vocab-pos">n.</div><div class="vocab-deriv">—</div></div>
+      <div class="vocab-item"><div class="vocab-word">scan</div><div class="vocab-mean">살피다, 훑어보다</div><div class="vocab-pos">v.</div><div class="vocab-deriv">scanner (n.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">catastrophic</div><div class="vocab-mean">재앙적인, 파국적인</div><div class="vocab-pos">adj.</div><div class="vocab-deriv">catastrophe (n.), catastrophically (adv.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">consequence</div><div class="vocab-mean">결과, 영향</div><div class="vocab-pos">n.</div><div class="vocab-deriv">consequent (adj.), consequently (adv.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">inherently</div><div class="vocab-mean">본질적으로, 본래</div><div class="vocab-pos">adv.</div><div class="vocab-deriv">inherent (adj.), inhere (v.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">visible</div><div class="vocab-mean">눈에 보이는, 분명한</div><div class="vocab-pos">adj.</div><div class="vocab-deriv">visibility (n.), visibly (adv.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">spin one's wheels</div><div class="vocab-mean">헛수고하다, 헛돌다</div><div class="vocab-pos">idiom</div><div class="vocab-deriv">spin (v./n.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">make progress</div><div class="vocab-mean">진전을 이루다</div><div class="vocab-pos">v.phr.</div><div class="vocab-deriv">progress (n./v.), progressive (adj.)</div></div>
+    </div>
+  </div>
+
+  <!-- Tab 4: 전문해석 -->
+  <div class="tab-panel" id="t167-4">
+    <h2 class="section-title">전문해석 (Full Translation)</h2>
+    <div class="translation">
+      교통에서 발생하는 <b>능동적 오류(active errors)</b>란 과속, 잘못된 페달을 밟는 일, 일방통행 도로로 진입하는 일과 같은 즉각적이고 직접적인 인간의 실수를 가리킨다. 이와 대조적으로 <b>잠재적 오류(latent errors)</b>는 곧게 뻗은 고속도로나 넓은 차선처럼 운전자에게 과속을 부추기는, 시스템 안에 숨어 있는 결함을 말한다. 한 기자는 잠재적 오류가 복잡한 시스템의 안전에 가장 큰 위협이 되지만 정작 수량화하기는 어렵다고 지적한다. 그 이유는 <b>스위스 치즈 모델(Swiss cheese model)</b>로 설명할 수 있다 — 잠재적 오류는 쌓아 놓은 치즈 슬라이스 안의 구멍과 같다. 사고는 오직 이 구멍들이 일렬로 정렬될 때에만 발생하며, 그 순간 능동적 오류 하나가 그 통로를 뚫고 지나가게 된다. 교차로에서의 우회전을 예로 들어 보자. 대부분의 경우 그 구멍들은 정렬되지 않는다 — 보행자가 없을 수도 있고, 운전자가 주변을 둘러볼 여유가 있을 수도 있기 때문이다. 그러나 잠재적 설계 오류들이 마침 딱 맞물려 정렬되는 순간, 운전자가 <i>'우연히'</i> 재앙적인 결과를 야기할 수 있는 완벽한 조건이 갖춰진다. 그럼에도 잠재적 오류는 본질적으로 눈에 잘 띄지 않기 때문에, 가장 잘 보이는 것은 늘 능동적 오류다. 결국 기록되고 분석되는 것도 바로 그 능동적 오류뿐이다. 잠재적 오류를 무시한 채로는 우리는 그저 헛바퀴만 돌릴 뿐이며, 실제 도로 안전 개선에는 한 걸음도 나아가지 못한다.
+    </div>
+  </div>
+
+  <!-- Tab 5: 주제/요지 -->
+  <div class="tab-panel" id="t167-5">
+    <h2 class="section-title">주제 · 요지 · 구조</h2>
+    <div class="theme-card">
+      <h3>주제 (Topic)</h3>
+      <p>교통 안전에서 능동적 오류와 잠재적 오류의 구분과, 진정한 위험을 가린 시스템 결함의 중요성</p>
+    </div>
+    <div class="theme-card">
+      <h3>요지 (Main Idea)</h3>
+      <p>교통사고의 진짜 원인은 눈에 띄는 능동적(운전자) 오류가 아니라, 도로 설계 같은 잠재적 시스템 결함이다. 스위스 치즈 모델이 보여주듯 사고는 여러 잠재적 결함의 '구멍'이 일렬로 정렬될 때 발생한다. 그러나 잠재적 오류는 보기 어려워 능동적 오류만이 기록·분석되고, 이를 방치하면 실제 도로 안전 개선은 결코 이루어질 수 없다.</p>
+    </div>
+    <div class="theme-card">
+      <h3>구조 흐름 (Structure)</h3>
+      <div class="structure-flow">
+        <div class="flow-step"><b>개념 정의 — 대조 (①②):</b> Active errors(즉각적 인간 실수) ↔ Latent errors(숨겨진 시스템 결함).</div>
+        <div class="flow-step"><b>주제문 — 전문가 인용 (③):</b> 잠재적 오류가 복잡 시스템 안전의 최대 위협이지만 수량화가 어려움.</div>
+        <div class="flow-step"><b>비유 모델 — 스위스 치즈 (④⑤):</b> 잠재 오류 = 치즈 구멍; 구멍이 정렬될 때만 능동 오류가 통과 → 사고 발생.</div>
+        <div class="flow-step"><b>구체 사례 — 우회전 (⑥⑦⑧):</b> 대부분은 구멍이 어긋남 → 안전; 그러나 잠재 결함이 정렬되면 운전자가 '우연히' 재앙 야기.</div>
+        <div class="flow-step"><b>역설 — 가시성의 함정 (⑨⑩):</b> 잠재 오류는 본질적으로 안 보임 → 기록·분석되는 것은 늘 능동 오류뿐.</div>
+        <div class="flow-step"><b>결론 — 경고 (⑪):</b> 잠재 오류를 무시하면 헛수고만 반복, 진정한 도로 안전 개선은 불가능.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab 6: 배경지식 -->
+  <div class="tab-panel" id="t167-6">
+    <h2 class="section-title">배경지식 (Background Knowledge)</h2>
+    <div class="bg-content">
+      <h3>🧀 Swiss Cheese Model — 사고 인과 모델</h3>
+      <p>영국 심리학자 <b>James Reason(1938~ )</b>이 1990년대에 제안한 사고 분석 모델. 복잡한 시스템에는 여러 겹의 방어막(defenses)이 존재하지만, 각 층마다 '구멍'(결함)이 있다. 평상시에는 구멍의 위치가 어긋나 사고를 막지만, 모든 구멍이 우연히 일직선으로 정렬되는 순간 사고가 발생한다는 비유이다. 항공·의료·원자력·교통 안전 분야의 표준 분석 틀로 자리잡았다.</p>
+
+      <h3>⚠️ Active Error vs Latent Error</h3>
+      <p><b>Active Error(능동적 오류)</b>: 사고 현장에서 즉시 발생하는 일선 작업자(운전자·조종사·간호사 등)의 실수. 결과가 즉각 가시화된다. <br>
+      <b>Latent Error(잠재적 오류)</b>: 시스템 설계·정책·관리 차원에 오래전부터 잠복해 있던 결함. 평소엔 무해해 보이지만 능동적 오류와 결합하는 순간 사고를 유발한다. James Reason은 잠재 오류를 <i>"resident pathogens(상주 병원체)"</i>로 비유했다.</p>
+
+      <h3>🛣️ Forgiving Roads — 도로 설계의 패러다임 전환</h3>
+      <p>전통적 교통 안전관은 운전자 책임(speeding tickets, 음주 단속)에 집중했다. 그러나 1990년대 이후 스웨덴의 <b>Vision Zero</b>, 네덜란드의 <b>Sustainable Safety</b> 정책은 "인간은 실수하는 존재이며 도로가 그 실수를 용서(forgive)해야 한다"는 철학으로 전환했다. 본문이 말하는 '직선 고속도로·넓은 차선이 과속을 유도한다'는 지적이 이러한 관점의 핵심이다.</p>
+
+      <h3>🚦 본문 사례 — 교차로 우회전</h3>
+      <p>미국·한국에서 우회전 사고는 보행자 사망의 주요 원인 중 하나다. 단순히 "운전자가 부주의했다"로 끝나기 쉽지만, 잠재적 결함이 누적되어 있다: ① A 기둥에 의한 사각지대(차량 설계), ② 우회전 전용 차로의 곡률(도로 설계), ③ 신호 체계, ④ 보행 신호와 차량 신호의 동시화, ⑤ 운전자에게 우회전 시 일시정지를 요구하지 않는 법규. 이 모든 '구멍'이 정렬되는 순간 사고가 일어난다.</p>
+
+      <h3>📊 가시성의 편향 (Visibility Bias)</h3>
+      <p>본문 ⑨~⑩의 핵심 통찰. 인간의 인지는 가시적이고 즉각적인 원인을 과대평가하는 경향이 있다(<b>availability bias</b>). 사고 보고서에 "운전자 과실"만 기록되면 통계상 능동적 오류가 사고의 주원인처럼 보이게 되고, 시스템 차원의 개선 동기는 약화된다. 이것이 본문이 경고하는 악순환이다.</p>
+
+      <h3>💡 다른 분야의 응용</h3>
+      <p>의료(투약 사고), 항공(승무원 자원관리, CRM), 원자력(체르노빌·후쿠시마 사고 분석), 산업안전 등 거의 모든 고위험 분야에서 Swiss Cheese Model이 활용된다. 2003년 컬럼비아 우주왕복선 폭발 사고 조사 보고서(CAIB Report)도 이 모델을 명시적으로 채택했다.</p>
+    </div>
+  </div>
+
+  <!-- Tab 7: 변형문제 -->
+  <div class="tab-panel" id="t167-7">
+    <h2 class="section-title">변형문제 (Practice Questions)</h2>
+
+    <!-- Q1: 주제 -->
+    <div class="quiz-q">
+      <div class="quiz-q-title">1. 다음 글의 주제로 가장 적절한 것은?</div>
+      <div class="quiz-opts">
+        <button class="quiz-opt" onclick="check('q167-1', this, false)">① 운전자의 부주의가 교통사고에 미치는 결정적 영향</button>
+        <button class="quiz-opt" onclick="check('q167-1', this, false)">② 스위스 치즈 제조 공정에서 발견되는 미세 결함의 원리</button>
+        <button class="quiz-opt" onclick="check('q167-1', this, true)">③ 시스템 차원의 잠재적 오류를 간과한 채 능동적 오류만 분석하는 한계</button>
+        <button class="quiz-opt" onclick="check('q167-1', this, false)">④ 교차로 우회전 시 보행자 인식 기술의 발전 동향</button>
+        <button class="quiz-opt" onclick="check('q167-1', this, false)">⑤ 복잡한 시스템 설계에서 도로 폭이 가지는 통계적 의미</button>
+      </div>
+      <div class="quiz-feedback" id="fb-q167-1"></div>
+      <button class="reset-btn" onclick="resetQuiz('q167-1')">↺ 다시 풀기</button>
+    </div>
+
+    <!-- Q2: 빈칸 -->
+    <div class="quiz-q">
+      <div class="quiz-q-title">2. 다음 빈칸에 들어갈 말로 가장 적절한 것은?</div>
+      <div class="quiz-q-text"><span class="eng">A crash occurs only when the holes align, allowing an active error to <b>____________________</b>.</span></div>
+      <div class="quiz-opts">
+        <button class="quiz-opt" onclick="check('q167-2', this, false)">① be eliminated</button>
+        <button class="quiz-opt" onclick="check('q167-2', this, true)">② pass through</button>
+        <button class="quiz-opt" onclick="check('q167-2', this, false)">③ slow down</button>
+        <button class="quiz-opt" onclick="check('q167-2', this, false)">④ be analyzed</button>
+        <button class="quiz-opt" onclick="check('q167-2', this, false)">⑤ disappear</button>
+      </div>
+      <div class="quiz-feedback" id="fb-q167-2"></div>
+      <button class="reset-btn" onclick="resetQuiz('q167-2')">↺ 다시 풀기</button>
+    </div>
+
+    <!-- Q3: 어법 -->
+    <div class="quiz-q">
+      <div class="quiz-q-title">3. 다음 밑줄 친 부분 중, 어법상 틀린 것은?</div>
+      <div class="quiz-q-text"><span class="eng">Active errors in traffic are immediate human mistakes—like speeding, pressing the wrong pedal, or <b>① turning</b> onto a one-way street. In contrast, latent errors are hidden system flaws like straight highways and wide lanes <b>② that</b> entice speeding. A journalist notes that latent errors pose the greatest threat to the safety of a complex system, but they are difficult <b>③ to quantify</b>. A crash occurs only when the holes align, <b>④ allowed</b> an active error to pass through. Ignoring them keeps us <b>⑤ spinning</b> our wheels.</span></div>
+      <div class="quiz-opts">
+        <button class="quiz-opt" onclick="check('q167-3', this, false)">①</button>
+        <button class="quiz-opt" onclick="check('q167-3', this, false)">②</button>
+        <button class="quiz-opt" onclick="check('q167-3', this, false)">③</button>
+        <button class="quiz-opt" onclick="check('q167-3', this, true)">④ allowed → allowing</button>
+        <button class="quiz-opt" onclick="check('q167-3', this, false)">⑤</button>
+      </div>
+      <div class="quiz-feedback" id="fb-q167-3"></div>
+      <button class="reset-btn" onclick="resetQuiz('q167-3')">↺ 다시 풀기</button>
+    </div>
+
+    <!-- Q4: 불일치 -->
+    <div class="quiz-q">
+      <div class="quiz-q-title">4. 본문의 내용과 일치하지 않는 것은?</div>
+      <div class="quiz-opts">
+        <button class="quiz-opt" onclick="check('q167-4', this, false)">① 능동적 오류는 과속이나 잘못된 페달 조작과 같은 즉각적 인간 실수이다.</button>
+        <button class="quiz-opt" onclick="check('q167-4', this, false)">② 직선 고속도로와 넓은 차선은 잠재적 오류의 예시로 제시된다.</button>
+        <button class="quiz-opt" onclick="check('q167-4', this, false)">③ 잠재적 오류는 복잡한 시스템의 안전에 가장 큰 위협이지만 수량화가 어렵다.</button>
+        <button class="quiz-opt" onclick="check('q167-4', this, true)">④ 잠재적 오류는 본질적으로 눈에 잘 보이기 때문에 기록·분석이 용이하다.</button>
+        <button class="quiz-opt" onclick="check('q167-4', this, false)">⑤ 잠재적 오류를 무시하면 도로 안전의 진정한 개선이 불가능하다.</button>
+      </div>
+      <div class="quiz-feedback" id="fb-q167-4"></div>
+      <button class="reset-btn" onclick="resetQuiz('q167-4')">↺ 다시 풀기</button>
+    </div>
+
+    <!-- Q5: 글의 순서 -->
+    <div class="quiz-q">
+      <div class="quiz-q-title">5. 다음 글 다음에 이어질 글의 순서로 가장 적절한 것은?</div>
+      <div class="quiz-q-text">
+        <span class="eng">Active errors in traffic are immediate human mistakes—like speeding or pressing the wrong pedal. In contrast, latent errors are hidden system flaws like straight highways and wide lanes that entice speeding.</span><br><br>
+        <b>(A)</b> <span class="eng">Consider a right turn at an intersection. Most of the time, the holes don't align—there may be no pedestrian, or the driver may have time to scan. But when latent design errors align just right, we have the perfect conditions for a driver to "accidentally" cause catastrophic consequences.</span><br><br>
+        <b>(B)</b> <span class="eng">A journalist notes that latent errors pose the greatest threat to the safety of a complex system, but they are difficult to quantify. The Swiss cheese model helps explain why: Latent errors are like holes in stacked cheese slices. A crash occurs only when the holes align.</span><br><br>
+        <b>(C)</b> <span class="eng">Yet, because latent errors are inherently hard to see, the active error remains the most visible. That's the error that gets recorded and analyzed. Ignoring them keeps us spinning our wheels, never making progress on real road safety improvements.</span>
+      </div>
+      <div class="quiz-opts">
+        <button class="quiz-opt" onclick="check('q167-5', this, false)">① (A) - (B) - (C)</button>
+        <button class="quiz-opt" onclick="check('q167-5', this, false)">② (A) - (C) - (B)</button>
+        <button class="quiz-opt" onclick="check('q167-5', this, true)">③ (B) - (A) - (C)</button>
+        <button class="quiz-opt" onclick="check('q167-5', this, false)">④ (B) - (C) - (A)</button>
+        <button class="quiz-opt" onclick="check('q167-5', this, false)">⑤ (C) - (B) - (A)</button>
+      </div>
+      <div class="quiz-feedback" id="fb-q167-5"></div>
+      <button class="reset-btn" onclick="resetQuiz('q167-5')">↺ 다시 풀기</button>
+    </div>
+
+    <!-- 서술형 -->
+    <h2 class="section-title" style="margin-top:35px;">📝 서술형 (Writing)</h2>
+
+    <div class="essay-q">
+      <div class="essay-q-title">[서술형 1] 빈칸 요약 — 본문의 핵심을 다음 한 문장으로 완성하시오.</div>
+      <div class="essay-cond">조건: 본문에 등장한 단어를 활용하여 각 빈칸에 한 단어씩 쓰시오.</div>
+      <div class="essay-text"><span class="eng">A traffic crash occurs only when the holes representing <b>(1) ______________</b> errors in a system align and allow an active error to pass through, yet because such errors are inherently hard to see, only the visible active error gets recorded and <b>(2) ______________</b>.</span></div>
+      <textarea class="essay-input" placeholder="(1)과 (2)에 들어갈 단어를 각각 쓰세요."></textarea>
+      <button class="toggle-ans-btn" onclick="toggleAns('ans167-1')">모범답안 보기 ▼</button>
+      <div class="model-ans" id="ans167-1">
+        <b>모범답안:</b> (1) <b>latent</b> &nbsp; (2) <b>analyzed</b><br>
+        <b>해설:</b> 본문 ④번 문장 "<b>Latent</b> errors are like holes in stacked cheese slices"과 ⑩번 문장 "That's the error that gets recorded and <b>analyzed</b>"에서 직접 인용. 두 단어는 본문의 핵심 대비(보이지 않는 잠재 오류 ↔ 분석되는 능동 오류)를 압축한다.
+      </div>
+    </div>
+
+    <div class="essay-q">
+      <div class="essay-q-title">[서술형 2] 본문에서 사용된 '스위스 치즈 모델(Swiss cheese model)'이 무엇을 비유하는지 한국어로 서술하시오.</div>
+      <div class="essay-cond">조건: 한국어 두 문장 이내로 작성할 것. 다음 두 요소가 모두 포함되어야 함 — (1) 치즈의 구멍이 비유하는 대상 (2) 구멍들이 어떤 상태가 될 때 사고가 발생하는지.</div>
+      <textarea class="essay-input" placeholder="답안을 작성하세요."></textarea>
+      <button class="toggle-ans-btn" onclick="toggleAns('ans167-2')">모범답안 보기 ▼</button>
+      <div class="model-ans" id="ans167-2">
+        <b>모범답안:</b> 스위스 치즈 모델에서 쌓여 있는 치즈 조각들의 구멍은 시스템 안에 숨어 있는 잠재적 오류(latent errors)를 상징한다. 평소에는 이 구멍들의 위치가 어긋나 사고를 막지만, 모든 구멍이 일직선으로 정렬되는 순간 능동적 오류가 그 통로를 뚫고 지나가 사고가 발생한다.<br><br>
+        <b>채점 포인트:</b> ① 치즈 구멍 = 잠재적 오류(시스템 결함)의 비유라는 점 명시 ② 구멍들이 일렬로 정렬될 때 능동적 오류가 통과하여 사고가 발생한다는 점 명시
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ===== Passage 168 ===== -->
+<div class="passage-panel" id="p168">
+  <div class="passage-num">PASSAGE 168</div>
+  <h1 class="passage-title">Misinformation and Deception in the Animal Kingdom</h1>
+
+  <div class="tabs">
+    <button class="tab-btn active" onclick="showTab(168,1)">① 전문</button>
+    <button class="tab-btn" onclick="showTab(168,2)">② 문장분석</button>
+    <button class="tab-btn" onclick="showTab(168,3)">③ 핵심단어</button>
+    <button class="tab-btn" onclick="showTab(168,4)">④ 전문해석</button>
+    <button class="tab-btn" onclick="showTab(168,5)">⑤ 주제·요지</button>
+    <button class="tab-btn" onclick="showTab(168,6)">⑥ 배경지식</button>
+    <button class="tab-btn" onclick="showTab(168,7)">⑦ 변형문제</button>
+  </div>
+
+  <!-- Tab 1: 전문 -->
+  <div class="tab-panel active" id="t168-1">
+    <h2 class="section-title">전문 (Full Passage)</h2>
+    <div class="full-passage-box">
+      <span class="sent-num">①</span> Misinformation has existed since well before humans were around. <span class="sent-num">②</span> Animals are routinely observed manipulating each other at the sensory and perceptual level. <span class="sent-num">③</span> An example involves two male deer entering a conflict over access to a mating partner or territory. <span class="sent-num">④</span> For both animals, it's best not to have the conflict escalate into full-fledged combat. <span class="sent-num">⑤</span> Their conflict therefore follows certain rituals, during which both try to persuade the other that they would win if they fought. <span class="sent-num">⑥</span> While it's important to accurately determine their opponent's strength, they also benefit from deceiving their opponent into thinking they're stronger than they are. <span class="sent-num">⑦</span> If two animals are of about equal strength, but one is tricked into thinking the other is stronger and withdraws, then the other wins without engaging in costly combat. <span class="sent-num">⑧</span> Natural selection therefore rewards strategies that instill false beliefs in opponents. <span class="sent-num">⑨</span> Of course, this dynamic runs in two directions: It is beneficial not only to deceive but also to avoid being deceived. <span class="sent-num">⑩</span> Animals develop strategies to detect whether an opponent's signals are accurate, leading to a <b><i>coevolutionary arms race</i></b> in which both misleading and discerning abilities constantly evolve.
+    </div>
+  </div>
+
+  <!-- Tab 2: 문장분석 -->
+  <div class="tab-panel" id="t168-2">
+    <h2 class="section-title">문장분석 (Sentence-by-Sentence Analysis)</h2>
+
+    <!-- Sentence 1 -->
+    <div class="sentence-block">
+      <div class="eng-box"><span class="num">①</span> Misinformation has existed since well before humans were around.</div>
+      <div class="literal">
+        <div class="literal-en">Misinformation has existed / since well before humans were around.</div>
+        <div class="literal-ko">잘못된 정보는 존재해 왔다 / 인간이 주변에 있기 훨씬 전부터.</div>
+      </div>
+      <ul class="grammar-bullets">
+        <li>◆ <span class="g-name">현재완료 (have + p.p., 계속)</span> / ▶ <span class="g-ex">Misinformation has existed</span> / ★ <span class="g-point">"~해 왔다" — since와 결합 / 과거부터 현재까지 지속 의미</span></li>
+        <li>◆ <span class="g-name">since + 부사구 (~ 이래로)</span> / ▶ <span class="g-ex">since well before humans were around</span> / ★ <span class="g-point">since 뒤에 부사절 가능 / well = '훨씬'(강조 부사)</span></li>
+        <li>◆ <span class="g-name">be around (존재하다, 주변에 있다)</span> / ▶ <span class="g-ex">before humans were around</span> / ★ <span class="g-point">관용 표현 — "존재하다, 살아있다"의 회화적 표현</span></li>
+      </ul>
+    </div>
+
+    <!-- Sentence 2 -->
+    <div class="sentence-block">
+      <div class="eng-box"><span class="num">②</span> Animals are routinely observed manipulating each other at the sensory and perceptual level.</div>
+      <div class="literal">
+        <div class="literal-en">Animals are routinely observed / manipulating each other / at the sensory and perceptual level.</div>
+        <div class="literal-ko">동물들은 일상적으로 관찰된다 / 서로를 조작하는 것이 / 감각적·지각적 수준에서.</div>
+      </div>
+      <ul class="grammar-bullets">
+        <li>◆ <span class="g-name">지각동사 수동태 + 현재분사</span> / ▶ <span class="g-ex">are observed manipulating each other</span> / ★ <span class="g-point">"observe O V-ing"의 수동태 → "be observed V-ing" — 5형식 지각동사 수동 변환 빈출</span></li>
+        <li>◆ <span class="g-name">each other (서로, 상호대명사)</span> / ▶ <span class="g-ex">manipulating each other</span> / ★ <span class="g-point">둘 이상의 대상이 서로에게 — one another와 동의</span></li>
+        <li>◆ <span class="g-name">at the ~ level (~ 수준에서)</span> / ▶ <span class="g-ex">at the sensory and perceptual level</span> / ★ <span class="g-point">"~의 수준/차원에서" — 학술 빈출 표현 / 형용사 병렬 (sensory and perceptual)</span></li>
+      </ul>
+    </div>
+
+    <!-- Sentence 3 -->
+    <div class="sentence-block">
+      <div class="eng-box"><span class="num">③</span> An example involves two male deer entering a conflict over access to a mating partner or territory.</div>
+      <div class="literal">
+        <div class="literal-en">An example involves / two male deer / entering a conflict / over access to a mating partner or territory.</div>
+        <div class="literal-ko">한 예는 ~을 포함한다 / 두 마리 수사슴이 / 갈등에 진입하는 것을 / 짝짓기 상대나 영역에 대한 접근권을 둘러싸고.</div>
+      </div>
+      <ul class="grammar-bullets">
+        <li>◆ <span class="g-name">involve + 동명사 (~하는 것을 포함하다)</span> / ▶ <span class="g-ex">involves two male deer entering a conflict</span> / ★ <span class="g-point">involve의 목적어 = 동명사구 / "two male deer"가 동명사의 의미상 주어</span></li>
+        <li>◆ <span class="g-name">현재분사 후치수식 (entering)</span> / ▶ <span class="g-ex">two male deer entering a conflict</span> / ★ <span class="g-point">분사가 명사 deer를 후치 수식 — "갈등에 들어가는 두 수사슴"</span></li>
+        <li>◆ <span class="g-name">전치사 over (~을 둘러싸고)</span> / ▶ <span class="g-ex">a conflict over access to ...</span> / ★ <span class="g-point">"~을 두고 다투는" — conflict/dispute/argue + over 빈출 조합</span></li>
+      </ul>
+    </div>
+
+    <!-- Sentence 4 -->
+    <div class="sentence-block">
+      <div class="eng-box"><span class="num">④</span> For both animals, it's best not to have the conflict escalate into full-fledged combat.</div>
+      <div class="literal">
+        <div class="literal-en">For both animals, / it's best / not to have the conflict escalate / into full-fledged combat.</div>
+        <div class="literal-ko">두 동물 모두에게, / 가장 좋은 것은 / 갈등이 격화되지 않게 하는 것이다 / 전면적 싸움으로.</div>
+      </div>
+      <ul class="grammar-bullets">
+        <li>◆ <span class="g-name">가주어 it + 진주어 to-V</span> / ▶ <span class="g-ex">it's best not to have ...</span> / ★ <span class="g-point">it=가주어 / 진주어=not to have ... — to부정사구 주어 빈출</span></li>
+        <li>◆ <span class="g-name">to부정사의 부정 (not to-V)</span> / ▶ <span class="g-ex">not to have the conflict escalate</span> / ★ <span class="g-point">부정어 not은 to 앞에 위치 — 어법 출제 빈출</span></li>
+        <li>◆ <span class="g-name">사역동사 have + O + 원형부정사</span> / ▶ <span class="g-ex">have the conflict escalate into ...</span> / ★ <span class="g-point">"O가 ~하도록 하다/되게 하다" — 사역 have는 원형부정사 (escalate)</span></li>
+        <li>◆ <span class="g-name">escalate into N (~로 격화/확대되다)</span> / ▶ <span class="g-ex">escalate into full-fledged combat</span> / ★ <span class="g-point">자동사 + into "~로 발전하다" — develop/turn/grow into 계열</span></li>
+      </ul>
+    </div>
+
+    <!-- Sentence 5 -->
+    <div class="sentence-block">
+      <div class="eng-box"><span class="num">⑤</span> Their conflict therefore follows certain rituals, during which both try to persuade the other that they would win if they fought.</div>
+      <div class="literal">
+        <div class="literal-en">Their conflict therefore follows certain rituals, / during which / both try to persuade the other / that they would win / if they fought.</div>
+        <div class="literal-ko">그들의 갈등은 그래서 특정 의식을 따른다, / 그 동안에 / 둘 다 상대를 설득하려 한다 / 자신이 이길 것이라고 / 만약 싸운다면.</div>
+      </div>
+      <ul class="grammar-bullets">
+        <li>◆ <span class="g-name">전치사 + 관계대명사 (during which)</span> / ▶ <span class="g-ex">certain rituals, during which both try ...</span> / ★ <span class="g-point">선행사 rituals를 보충 설명 / "during the rituals"의 관계사 변환 — 어법 빈출</span></li>
+        <li>◆ <span class="g-name">persuade O that S+V (4형식)</span> / ▶ <span class="g-ex">persuade the other that they would win</span> / ★ <span class="g-point">"O에게 ~라고 설득하다" — that절이 직접목적어</span></li>
+        <li>◆ <span class="g-name">가정법 과거 (would V / if S + V과거)</span> / ▶ <span class="g-ex">they would win if they fought</span> / ★ <span class="g-point">현재 사실의 반대 가정 — "만약 ~한다면 …할 텐데" / 빈출 가정법</span></li>
+      </ul>
+    </div>
+
+    <!-- Sentence 6 -->
+    <div class="sentence-block">
+      <div class="eng-box"><span class="num">⑥</span> While it's important to accurately determine their opponent's strength, they also benefit from deceiving their opponent into thinking they're stronger than they are.</div>
+      <div class="literal">
+        <div class="literal-en">While it's important / to accurately determine / their opponent's strength, / they also benefit from / deceiving their opponent / into thinking / they're stronger than they are.</div>
+        <div class="literal-ko">~이 중요하지만 / 정확히 판단하는 것이 / 상대의 힘을, / 그들은 또한 ~로부터 이익을 얻는다 / 상대를 기만하는 것 / ~로 생각하도록 / 자신들이 실제보다 더 강하다고.</div>
+      </div>
+      <ul class="grammar-bullets">
+        <li>◆ <span class="g-name">접속사 While (양보, ~이지만)</span> / ▶ <span class="g-ex">While it's important ...</span> / ★ <span class="g-point">"~이지만" 대조 / although/though와 동의 — 시간 의미와 구분 필요</span></li>
+        <li>◆ <span class="g-name">benefit from + 동명사 (~로부터 이익을 얻다)</span> / ▶ <span class="g-ex">benefit from deceiving their opponent</span> / ★ <span class="g-point">전치사 from 뒤 동명사 — 어법 빈출 / cf. benefit O 타동사 용법도 있음</span></li>
+        <li>◆ <span class="g-name">deceive O into V-ing (속여서 ~하게 하다)</span> / ▶ <span class="g-ex">deceiving their opponent into thinking ...</span> / ★ <span class="g-point">"trick/fool/persuade O into V-ing" 계열 — 빈출 구문</span></li>
+        <li>◆ <span class="g-name">than they are (비교급 + than S+V)</span> / ▶ <span class="g-ex">stronger than they are</span> / ★ <span class="g-point">"실제 그러한 것보다 더 ~" — than절의 be동사가 비교 기준</span></li>
+      </ul>
+    </div>
+
+    <!-- Sentence 7 -->
+    <div class="sentence-block">
+      <div class="eng-box"><span class="num">⑦</span> If two animals are of about equal strength, but one is tricked into thinking the other is stronger and withdraws, then the other wins without engaging in costly combat.</div>
+      <div class="literal">
+        <div class="literal-en">If two animals are of about equal strength, / but one is tricked into thinking / the other is stronger / and withdraws, / then the other wins / without engaging in costly combat.</div>
+        <div class="literal-ko">두 동물이 거의 같은 힘을 가지고 있지만, / 한 마리가 속아서 ~라고 생각하고 / 다른 쪽이 더 강하다고 / 그리고 물러난다면, / 그러면 다른 쪽이 이긴다 / 값비싼 싸움을 벌이지 않고.</div>
+      </div>
+      <ul class="grammar-bullets">
+        <li>◆ <span class="g-name">be of + 명사 (~의 성질을 갖다)</span> / ▶ <span class="g-ex">are of about equal strength</span> / ★ <span class="g-point">"of + 추상명사 = 형용사" — be of importance = be important / 빈출 패턴</span></li>
+        <li>◆ <span class="g-name">trick O into V-ing (속여서 ~하게 하다)</span> / ▶ <span class="g-ex">is tricked into thinking the other is stronger</span> / ★ <span class="g-point">⑥의 deceive into와 같은 구조의 수동태 — 어휘 변형 출제</span></li>
+        <li>◆ <span class="g-name">without + 동명사 (~하지 않고)</span> / ▶ <span class="g-ex">without engaging in costly combat</span> / ★ <span class="g-point">전치사 without 뒤 동명사 — 어법 빈출</span></li>
+        <li>◆ <span class="g-name">engage in N (~에 참여하다, 종사하다)</span> / ▶ <span class="g-ex">engaging in costly combat</span> / ★ <span class="g-point">관용 동사구 — participate in/take part in과 동의</span></li>
+      </ul>
+    </div>
+
+    <!-- Sentence 8 -->
+    <div class="sentence-block">
+      <div class="eng-box"><span class="num">⑧</span> Natural selection therefore rewards strategies that instill false beliefs in opponents.</div>
+      <div class="literal">
+        <div class="literal-en">Natural selection therefore rewards strategies / that instill false beliefs in opponents.</div>
+        <div class="literal-ko">자연 선택은 따라서 전략에 보상을 준다 / 상대에게 거짓 믿음을 심어 주는.</div>
+      </div>
+      <ul class="grammar-bullets">
+        <li>◆ <span class="g-name">관계대명사 that (주격)</span> / ▶ <span class="g-ex">strategies that instill false beliefs</span> / ★ <span class="g-point">선행사 strategies(복수) → 동사 instill (수일치)</span></li>
+        <li>◆ <span class="g-name">instill A in B (B에게 A를 주입/심다)</span> / ▶ <span class="g-ex">instill false beliefs in opponents</span> / ★ <span class="g-point">"~에게 …을 서서히 불어넣다/심다" — 학술/추상 빈출 동사</span></li>
+        <li>◆ <span class="g-name">접속부사 therefore (따라서)</span> / ▶ <span class="g-ex">Natural selection therefore rewards ...</span> / ★ <span class="g-point">앞 문장의 논리적 귀결 — thus/hence와 동의</span></li>
+      </ul>
+    </div>
+
+    <!-- Sentence 9 -->
+    <div class="sentence-block">
+      <div class="eng-box"><span class="num">⑨</span> Of course, this dynamic runs in two directions: It is beneficial not only to deceive but also to avoid being deceived.</div>
+      <div class="literal">
+        <div class="literal-en">Of course, / this dynamic runs in two directions: / It is beneficial / not only to deceive / but also to avoid being deceived.</div>
+        <div class="literal-ko">물론, / 이 역학은 두 방향으로 작동한다: / 이로운 것은 / 기만하는 것뿐만 아니라 / 또한 기만당하는 것을 피하는 것이다.</div>
+      </div>
+      <ul class="grammar-bullets">
+        <li>◆ <span class="g-name">not only A but also B (A뿐만 아니라 B도)</span> / ▶ <span class="g-ex">not only to deceive but also to avoid ...</span> / ★ <span class="g-point">상관접속사 — 두 to부정사구 병렬 / 어법 빈출</span></li>
+        <li>◆ <span class="g-name">avoid + 동명사 (~을 피하다)</span> / ▶ <span class="g-ex">avoid being deceived</span> / ★ <span class="g-point">avoid는 동명사만 목적어 가능 — to V 불가 / 어법 빈출 동사</span></li>
+        <li>◆ <span class="g-name">동명사 수동태 (being p.p.)</span> / ▶ <span class="g-ex">being deceived</span> / ★ <span class="g-point">"기만당하는 것" — 동명사가 수동 의미일 때 being + p.p.</span></li>
+      </ul>
+    </div>
+
+    <!-- Sentence 10 -->
+    <div class="sentence-block">
+      <div class="eng-box"><span class="num">⑩</span> Animals develop strategies to detect whether an opponent's signals are accurate, leading to a coevolutionary arms race in which both misleading and discerning abilities constantly evolve.</div>
+      <div class="literal">
+        <div class="literal-en">Animals develop strategies / to detect / whether an opponent's signals are accurate, / leading to a coevolutionary arms race / in which both misleading and discerning abilities / constantly evolve.</div>
+        <div class="literal-ko">동물들은 전략을 개발한다 / 탐지하는 / 상대의 신호가 정확한지 여부를, / 공진화 군비 경쟁으로 이어지면서 / 그 안에서 기만 능력과 식별 능력 둘 다 / 끊임없이 진화한다.</div>
+      </div>
+      <ul class="grammar-bullets">
+        <li>◆ <span class="g-name">to부정사 형용사 용법</span> / ▶ <span class="g-ex">strategies to detect ...</span> / ★ <span class="g-point">strategies 수식 — "탐지하기 위한 전략" / 형용사적 용법</span></li>
+        <li>◆ <span class="g-name">whether S+V (~인지 아닌지)</span> / ▶ <span class="g-ex">whether an opponent's signals are accurate</span> / ★ <span class="g-point">명사절 접속사 — detect의 목적어 / if와 교체 가능</span></li>
+        <li>◆ <span class="g-name">분사구문 (결과)</span> / ▶ <span class="g-ex">leading to a coevolutionary arms race</span> / ★ <span class="g-point">"그래서 ~로 이어지다" — , and this leads to로 환원 가능</span></li>
+        <li>◆ <span class="g-name">전치사 + 관계대명사 (in which)</span> / ▶ <span class="g-ex">arms race in which both ... evolve</span> / ★ <span class="g-point">선행사 arms race 보충 설명 / "in the arms race"의 관계사 전환</span></li>
+        <li>◆ <span class="g-name">both A and B (두 동명사 병렬)</span> / ▶ <span class="g-ex">both misleading and discerning abilities</span> / ★ <span class="g-point">두 분사가 형용사로 abilities 공동 수식 — 병렬구조</span></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Tab 3: 핵심단어 -->
+  <div class="tab-panel" id="t168-3">
+    <h2 class="section-title">핵심단어 및 표현 (Key Vocabulary &amp; Expressions)</h2>
+    <div class="vocab-grid">
+      <div class="vocab-item"><div class="vocab-word">misinformation</div><div class="vocab-mean">잘못된 정보, 허위 정보</div><div class="vocab-pos">n.</div><div class="vocab-deriv">misinform (v.), information (n.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">routinely</div><div class="vocab-mean">일상적으로, 정기적으로</div><div class="vocab-pos">adv.</div><div class="vocab-deriv">routine (n./adj.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">manipulate</div><div class="vocab-mean">조작하다, 교묘히 다루다</div><div class="vocab-pos">v.</div><div class="vocab-deriv">manipulation (n.), manipulative (adj.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">sensory</div><div class="vocab-mean">감각의</div><div class="vocab-pos">adj.</div><div class="vocab-deriv">sense (n./v.), sensation (n.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">perceptual</div><div class="vocab-mean">지각의, 인지의</div><div class="vocab-pos">adj.</div><div class="vocab-deriv">perceive (v.), perception (n.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">mating partner</div><div class="vocab-mean">짝짓기 상대</div><div class="vocab-pos">n.</div><div class="vocab-deriv">mate (n./v.), mating (n.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">territory</div><div class="vocab-mean">영역, 영토</div><div class="vocab-pos">n.</div><div class="vocab-deriv">territorial (adj.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">escalate</div><div class="vocab-mean">격화되다, 확대되다</div><div class="vocab-pos">v.</div><div class="vocab-deriv">escalation (n.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">full-fledged</div><div class="vocab-mean">본격적인, 전면적인</div><div class="vocab-pos">adj.</div><div class="vocab-deriv">fledge (v., 깃털이 다 나다)</div></div>
+      <div class="vocab-item"><div class="vocab-word">combat</div><div class="vocab-mean">싸움, 전투 / 싸우다</div><div class="vocab-pos">n./v.</div><div class="vocab-deriv">combatant (n.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">ritual</div><div class="vocab-mean">의식, 의례 행동</div><div class="vocab-pos">n.</div><div class="vocab-deriv">ritualistic (adj.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">persuade O that</div><div class="vocab-mean">O에게 ~라고 설득하다</div><div class="vocab-pos">v.</div><div class="vocab-deriv">persuasion (n.), persuasive (adj.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">determine</div><div class="vocab-mean">판단하다, 결정하다</div><div class="vocab-pos">v.</div><div class="vocab-deriv">determination (n.), determined (adj.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">deceive O into V-ing</div><div class="vocab-mean">O를 속여서 ~하게 하다</div><div class="vocab-pos">v.phr.</div><div class="vocab-deriv">deception (n.), deceptive (adj.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">withdraw</div><div class="vocab-mean">물러나다, 철수하다</div><div class="vocab-pos">v.</div><div class="vocab-deriv">withdrawal (n.), withdrawn (adj.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">engage in</div><div class="vocab-mean">~에 참여하다, 관여하다</div><div class="vocab-pos">v.phr.</div><div class="vocab-deriv">engagement (n.), engaged (adj.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">costly</div><div class="vocab-mean">대가가 큰, 비용이 많이 드는</div><div class="vocab-pos">adj.</div><div class="vocab-deriv">cost (n./v.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">natural selection</div><div class="vocab-mean">자연 선택, 자연 도태</div><div class="vocab-pos">n.</div><div class="vocab-deriv">select (v.), selective (adj.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">instill</div><div class="vocab-mean">(생각·감정을) 서서히 심어주다</div><div class="vocab-pos">v.</div><div class="vocab-deriv">instillation (n.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">dynamic</div><div class="vocab-mean">역학, 상호작용 / 역동적인</div><div class="vocab-pos">n./adj.</div><div class="vocab-deriv">dynamics (n.), dynamically (adv.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">coevolutionary</div><div class="vocab-mean">공진화의</div><div class="vocab-pos">adj.</div><div class="vocab-deriv">coevolution (n.), evolve (v.)</div></div>
+      <div class="vocab-item"><div class="vocab-word">arms race</div><div class="vocab-mean">군비 경쟁</div><div class="vocab-pos">n.</div><div class="vocab-deriv">arms (n., 무기)</div></div>
+      <div class="vocab-item"><div class="vocab-word">discern</div><div class="vocab-mean">식별하다, 분간하다</div><div class="vocab-pos">v.</div><div class="vocab-deriv">discernment (n.), discerning (adj.)</div></div>
+    </div>
+  </div>
+
+  <!-- Tab 4: 전문해석 -->
+  <div class="tab-panel" id="t168-4">
+    <h2 class="section-title">전문해석 (Full Translation)</h2>
+    <div class="translation">
+      잘못된 정보, 즉 <b>기만(misinformation)</b>은 인간이 존재하기 훨씬 이전부터 자연계에 있어 왔다. 동물들이 감각적·지각적 차원에서 서로를 조작하는 모습은 일상적으로 관찰된다. 한 가지 예로, 두 마리의 수사슴이 짝짓기 상대나 영역에 대한 접근권을 놓고 갈등에 들어가는 상황을 들 수 있다. 두 동물 모두에게 가장 바람직한 결과는 갈등이 전면적인 싸움으로까지 격화되지 않는 것이다. 그래서 그들의 갈등은 일종의 의식(ritual)에 따라 진행되며, 그 과정에서 양쪽 모두 "내가 싸우면 이길 것이다"라는 점을 상대에게 납득시키려고 애쓴다. 상대의 진짜 힘을 정확히 판단하는 것도 중요하지만, 동시에 자신을 실제보다 더 강한 존재로 상대가 믿게끔 <b>기만(deceive)</b>하는 데에서도 이익을 얻을 수 있다. 두 동물의 힘이 거의 비슷할 때, 한 마리가 "상대가 더 강하다"고 속아 넘어가 물러난다면, 다른 한 마리는 값비싼 싸움을 치르지 않고도 승리하게 된다. 따라서 <b>자연 선택(natural selection)</b>은 상대에게 거짓된 믿음을 심어주는 전략에 보상을 준다. 물론 이러한 역학은 양방향으로 작동한다 — 즉, 상대를 속이는 것뿐 아니라 <b>속지 않는 것</b>에서도 이익을 얻는 것이다. 동물들은 상대의 신호가 진짜인지 가짜인지 가려내는 전략을 발달시키며, 이는 결국 기만 능력과 식별 능력이 끝없이 함께 진화하는 <b>공진화 군비 경쟁(coevolutionary arms race)</b>으로 이어진다.
+    </div>
+  </div>
+
+  <!-- Tab 5: 주제/요지 -->
+  <div class="tab-panel" id="t168-5">
+    <h2 class="section-title">주제 · 요지 · 구조</h2>
+    <div class="theme-card">
+      <h3>주제 (Topic)</h3>
+      <p>동물 세계의 기만(misinformation) 행동과 공진화적 군비 경쟁</p>
+    </div>
+    <div class="theme-card">
+      <h3>요지 (Main Idea)</h3>
+      <p>잘못된 정보는 인간 이전부터 자연계에 존재해 왔다. 수사슴의 의식적 갈등 사례처럼, 동물들은 비싼 전면전을 피하면서도 승리하기 위해 자신을 실제보다 강한 존재로 보이게 기만한다. 자연 선택은 이러한 기만 전략에 보상하지만, 동시에 상대의 거짓 신호를 식별하는 능력에도 보상하므로, 결과적으로 기만 능력과 식별 능력이 끊임없이 함께 진화하는 공진화 군비 경쟁이 발생한다.</p>
+    </div>
+    <div class="theme-card">
+      <h3>구조 흐름 (Structure)</h3>
+      <div class="structure-flow">
+        <div class="flow-step"><b>도입 — 일반 명제 (①②):</b> 기만(misinformation)은 인간 이전부터 존재 / 동물도 감각·지각 차원에서 서로를 조작.</div>
+        <div class="flow-step"><b>구체 사례 — 수사슴의 갈등 (③④⑤):</b> 두 수사슴의 영역·짝짓기 다툼 → 전면전 회피가 이상적 → 의식화된 갈등을 통해 상대 설득 시도.</div>
+        <div class="flow-step"><b>핵심 메커니즘 — 기만의 이익 (⑥⑦):</b> 상대 힘 정확 판단도 중요하지만, 자신을 실제보다 강하게 보이도록 기만하는 것에도 이익 → 약한 쪽 후퇴 시 강한 쪽 무비용 승리.</div>
+        <div class="flow-step"><b>진화론적 결론 1 (⑧):</b> 따라서 자연 선택이 '상대에게 거짓 믿음을 심는' 기만 전략에 보상.</div>
+        <div class="flow-step"><b>균형 — 양방향 진화 (⑨⑩):</b> 동시에 '속지 않는 능력'에도 보상 → 기만 능력과 식별 능력의 공진화 군비 경쟁 발생.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab 6: 배경지식 -->
+  <div class="tab-panel" id="t168-6">
+    <h2 class="section-title">배경지식 (Background Knowledge)</h2>
+    <div class="bg-content">
+      <h3>🦌 의례화된 갈등 (Ritualized Conflict)</h3>
+      <p>동물행동학(ethology)의 핵심 개념. 영역·짝짓기·서열을 둘러싼 동종 간 갈등에서 양쪽 모두 치명적 부상을 피하기 위해 발달시킨 '규칙화된' 대결 방식이다. 수사슴의 뿔 부딪힘, 큰뿔야생양의 박치기, 늑대의 자세 과시, 영장류의 위협 디스플레이 등이 대표적이다. <b>Niko Tinbergen</b>·<b>Konrad Lorenz</b> 같은 노벨상 수상 동물행동학자들이 체계화했다.</p>
+
+      <h3>🎭 정직한 신호 vs 부정직한 신호 (Honest vs Dishonest Signals)</h3>
+      <p>진화생물학자 <b>Amotz Zahavi</b>의 <b>핸디캡 원리(Handicap Principle)</b>는 비싼 신호(예: 공작 수컷의 거대한 꼬리)만이 정직한 신호일 수 있다고 본다. 가짜로 흉내내기 어려울수록 그 신호는 신뢰할 만하다. 그러나 본문에서 다루듯, 일부 동물은 거짓 신호로 상대를 기만하려는 진화적 동기 또한 가진다 — 이로써 신호의 '정직성'과 '부정직성'은 끊임없는 긴장 관계에 놓인다.</p>
+
+      <h3>⚔️ 진화적 군비 경쟁 (Evolutionary Arms Race)</h3>
+      <p><b>Richard Dawkins</b>와 <b>John Krebs</b>가 1979년 논문 "Arms races between and within species"에서 정립한 개념. 포식자와 피식자, 기생자와 숙주, 또는 본문처럼 같은 종 내의 송신자와 수신자가 서로의 진화에 끊임없이 압력을 주고받으며 함께 진화하는 현상을 말한다. 한쪽이 더 잘 속이게 진화하면 다른 쪽은 더 잘 간파하게 진화하고, 이 무한 순환이 양쪽 능력의 정교화를 낳는다.</p>
+
+      <h3>🧬 자연 선택과 기만</h3>
+      <p>본문 ⑧의 "Natural selection rewards strategies that instill false beliefs"는 다윈주의의 핵심 원리를 기만 행동에 적용한 것이다. 어떤 전략이든 개체의 번식 성공률을 높이면 자연 선택은 그것을 '보상'한다(=다음 세대에 전달될 확률이 높아진다). 도덕적 가치 판단과 무관하게, 진화는 결과적으로 '기만 능력'을 발달시킬 수 있다.</p>
+
+      <h3>🐍 자연계의 기만 사례들</h3>
+      <p>① <b>의태(mimicry)</b>: 무해한 산호뱀 흉내내기 — 독 없는 우유뱀이 독 있는 산호뱀의 줄무늬를 모방. ② <b>죽은 척(thanatosis)</b>: 일부 곤충·뱀이 죽은 시늉으로 포식자 회피. ③ <b>위장 신호</b>: 갑오징어가 양쪽 옆구리에 서로 다른 신호를 동시에 보내 한쪽엔 구애, 다른쪽엔 위협. ④ <b>가짜 부상 시늉</b>: 물떼새가 둥지에서 포식자를 유인하려 날개 부러진 척.</p>
+
+      <h3>💡 인간 사회에 대한 함의</h3>
+      <p>본문은 동물 사례를 다루지만, 그 함의는 인간 사회의 가짜뉴스·광고·정치 선전 문제와 직접 연결된다. <b>Hugo Mercier</b> 같은 인지과학자는 인간의 '논증 능력(argumentative reasoning)'이 진화적으로 기만에 대한 방어 기제로 발달했다고 주장한다. 즉 우리는 잘 설득당하지 않도록 진화한 결과 비판적 사고력을 갖게 되었다는 것이다.</p>
+    </div>
+  </div>
+
+  <!-- Tab 7: 변형문제 -->
+  <div class="tab-panel" id="t168-7">
+    <h2 class="section-title">변형문제 (Practice Questions)</h2>
+
+    <!-- Q1: 주제 -->
+    <div class="quiz-q">
+      <div class="quiz-q-title">1. 다음 글의 주제로 가장 적절한 것은?</div>
+      <div class="quiz-opts">
+        <button class="quiz-opt" onclick="check('q168-1', this, false)">① 인간 사회의 가짜뉴스 확산 메커니즘과 그 폐해</button>
+        <button class="quiz-opt" onclick="check('q168-1', this, false)">② 수사슴의 영역 다툼에서 나타나는 부상 발생 빈도</button>
+        <button class="quiz-opt" onclick="check('q168-1', this, true)">③ 동물 세계의 기만 행동과 그것이 낳는 공진화 군비 경쟁</button>
+        <button class="quiz-opt" onclick="check('q168-1', this, false)">④ 자연 선택이 협력적 행동을 선호하는 진화론적 이유</button>
+        <button class="quiz-opt" onclick="check('q168-1', this, false)">⑤ 감각·지각 능력의 동물 종별 차이와 그 한계</button>
+      </div>
+      <div class="quiz-feedback" id="fb-q168-1"></div>
+      <button class="reset-btn" onclick="resetQuiz('q168-1')">↺ 다시 풀기</button>
+    </div>
+
+    <!-- Q2: 빈칸 -->
+    <div class="quiz-q">
+      <div class="quiz-q-title">2. 다음 빈칸에 들어갈 말로 가장 적절한 것은?</div>
+      <div class="quiz-q-text"><span class="eng">Natural selection therefore rewards strategies that <b>____________________</b> false beliefs in opponents.</span></div>
+      <div class="quiz-opts">
+        <button class="quiz-opt" onclick="check('q168-2', this, false)">① eliminate</button>
+        <button class="quiz-opt" onclick="check('q168-2', this, false)">② challenge</button>
+        <button class="quiz-opt" onclick="check('q168-2', this, true)">③ instill</button>
+        <button class="quiz-opt" onclick="check('q168-2', this, false)">④ verify</button>
+        <button class="quiz-opt" onclick="check('q168-2', this, false)">⑤ correct</button>
+      </div>
+      <div class="quiz-feedback" id="fb-q168-2"></div>
+      <button class="reset-btn" onclick="resetQuiz('q168-2')">↺ 다시 풀기</button>
+    </div>
+
+    <!-- Q3: 어법 -->
+    <div class="quiz-q">
+      <div class="quiz-q-title">3. 다음 밑줄 친 부분 중, 어법상 틀린 것은?</div>
+      <div class="quiz-q-text"><span class="eng">Animals are routinely <b>① observed</b> manipulating each other at the sensory and perceptual level. For both animals, it's best <b>② not to have</b> the conflict escalate into full-fledged combat. While it's important to accurately determine their opponent's strength, they also benefit from <b>③ deceiving</b> their opponent into thinking they're stronger than they are. Of course, this dynamic runs in two directions: It is beneficial not only to deceive but also to avoid <b>④ to be deceived</b>. Animals develop strategies <b>⑤ to detect</b> whether an opponent's signals are accurate.</span></div>
+      <div class="quiz-opts">
+        <button class="quiz-opt" onclick="check('q168-3', this, false)">①</button>
+        <button class="quiz-opt" onclick="check('q168-3', this, false)">②</button>
+        <button class="quiz-opt" onclick="check('q168-3', this, false)">③</button>
+        <button class="quiz-opt" onclick="check('q168-3', this, true)">④ to be deceived → being deceived</button>
+        <button class="quiz-opt" onclick="check('q168-3', this, false)">⑤</button>
+      </div>
+      <div class="quiz-feedback" id="fb-q168-3"></div>
+      <button class="reset-btn" onclick="resetQuiz('q168-3')">↺ 다시 풀기</button>
+    </div>
+
+    <!-- Q4: 불일치 -->
+    <div class="quiz-q">
+      <div class="quiz-q-title">4. 본문의 내용과 일치하지 않는 것은?</div>
+      <div class="quiz-opts">
+        <button class="quiz-opt" onclick="check('q168-4', this, false)">① 기만(misinformation)은 인간이 등장하기 훨씬 이전부터 존재해 왔다.</button>
+        <button class="quiz-opt" onclick="check('q168-4', this, false)">② 두 수사슴 모두에게 전면적 싸움으로 갈등이 격화되지 않는 것이 가장 좋다.</button>
+        <button class="quiz-opt" onclick="check('q168-4', this, true)">③ 자연 선택은 상대의 힘을 정확히 판단하는 능력만을 보상한다.</button>
+        <button class="quiz-opt" onclick="check('q168-4', this, false)">④ 비슷한 힘의 두 동물 중 한쪽이 속아 물러나면 다른 쪽은 싸움 없이 이긴다.</button>
+        <button class="quiz-opt" onclick="check('q168-4', this, false)">⑤ 기만 능력과 식별 능력은 함께 진화하는 공진화 군비 경쟁을 형성한다.</button>
+      </div>
+      <div class="quiz-feedback" id="fb-q168-4"></div>
+      <button class="reset-btn" onclick="resetQuiz('q168-4')">↺ 다시 풀기</button>
+    </div>
+
+    <!-- Q5: 글의 순서 -->
+    <div class="quiz-q">
+      <div class="quiz-q-title">5. 다음 글 다음에 이어질 글의 순서로 가장 적절한 것은?</div>
+      <div class="quiz-q-text">
+        <span class="eng">Misinformation has existed since well before humans were around. Animals are routinely observed manipulating each other at the sensory and perceptual level.</span><br><br>
+        <b>(A)</b> <span class="eng">While it's important to accurately determine their opponent's strength, they also benefit from deceiving their opponent into thinking they're stronger than they are. If one is tricked into thinking the other is stronger and withdraws, then the other wins without engaging in costly combat.</span><br><br>
+        <b>(B)</b> <span class="eng">An example involves two male deer entering a conflict over access to a mating partner or territory. For both animals, it's best not to have the conflict escalate into full-fledged combat. Their conflict therefore follows certain rituals.</span><br><br>
+        <b>(C)</b> <span class="eng">Natural selection therefore rewards strategies that instill false beliefs in opponents. Of course, this dynamic runs in two directions, leading to a coevolutionary arms race in which both misleading and discerning abilities constantly evolve.</span>
+      </div>
+      <div class="quiz-opts">
+        <button class="quiz-opt" onclick="check('q168-5', this, false)">① (A) - (B) - (C)</button>
+        <button class="quiz-opt" onclick="check('q168-5', this, false)">② (A) - (C) - (B)</button>
+        <button class="quiz-opt" onclick="check('q168-5', this, true)">③ (B) - (A) - (C)</button>
+        <button class="quiz-opt" onclick="check('q168-5', this, false)">④ (B) - (C) - (A)</button>
+        <button class="quiz-opt" onclick="check('q168-5', this, false)">⑤ (C) - (B) - (A)</button>
+      </div>
+      <div class="quiz-feedback" id="fb-q168-5"></div>
+      <button class="reset-btn" onclick="resetQuiz('q168-5')">↺ 다시 풀기</button>
+    </div>
+
+    <!-- 서술형 -->
+    <h2 class="section-title" style="margin-top:35px;">📝 서술형 (Writing)</h2>
+
+    <div class="essay-q">
+      <div class="essay-q-title">[서술형 1] 빈칸 요약 — 본문의 핵심을 다음 한 문장으로 완성하시오.</div>
+      <div class="essay-cond">조건: 본문에 등장한 단어를 활용하여 각 빈칸에 한 단어씩 쓰시오.</div>
+      <div class="essay-text"><span class="eng">Because natural selection rewards both the ability to <b>(1) ______________</b> opponents into false beliefs and the ability to detect inaccurate signals, animals engage in a coevolutionary arms <b>(2) ______________</b> in which misleading and discerning abilities constantly evolve.</span></div>
+      <textarea class="essay-input" placeholder="(1)과 (2)에 들어갈 단어를 각각 쓰세요."></textarea>
+      <button class="toggle-ans-btn" onclick="toggleAns('ans168-1')">모범답안 보기 ▼</button>
+      <div class="model-ans" id="ans168-1">
+        <b>모범답안:</b> (1) <b>deceive</b> &nbsp; (2) <b>race</b><br>
+        <b>해설:</b> 본문 ⑥번 문장 "benefit from <b>deceiving</b> their opponent"과 ⑩번 문장 "leading to a coevolutionary arms <b>race</b>"에서 직접 인용. 두 단어는 본문의 두 핵심 축(기만 행동 ↔ 공진화적 결과)을 압축한다.
+      </div>
+    </div>
+
+    <div class="essay-q">
+      <div class="essay-q-title">[서술형 2] 본문에 따르면 두 수사슴의 갈등이 의식(ritual)에 따라 진행되는 이유를 한국어로 서술하시오.</div>
+      <div class="essay-cond">조건: 한국어 두 문장 이내로 작성할 것. 다음 두 요소가 모두 포함되어야 함 — (1) 두 동물 모두에게 가장 바람직한 결과가 무엇인지 (2) 의식 중에 양쪽이 무엇을 시도하는지.</div>
+      <textarea class="essay-input" placeholder="답안을 작성하세요."></textarea>
+      <button class="toggle-ans-btn" onclick="toggleAns('ans168-2')">모범답안 보기 ▼</button>
+      <div class="model-ans" id="ans168-2">
+        <b>모범답안:</b> 두 수사슴 모두에게 갈등이 전면적인 싸움(full-fledged combat)으로 격화되지 않는 것이 가장 이상적이기 때문에, 그들의 갈등은 일종의 의식(ritual)에 따라 진행된다. 이 의식 동안 양쪽 모두 "만약 우리가 실제로 싸운다면 내가 이길 것이다"라는 점을 상대에게 설득시키려고 시도한다.<br><br>
+        <b>채점 포인트:</b> ① 전면전 회피가 두 동물 모두에게 최선이라는 점 명시 ② 의식 중 양쪽이 "내가 이길 것"임을 상대에게 설득(persuade)하려 한다는 점 명시
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="footer">
+  <b>에듀케레 영수학원</b> · 천일문 독해 Master 166-168 분석지 © 2026<br>
+  경남 양산시 물금읍 범어로 72, 희창 1빌딩 603호 · ☎ 055-363-8010
+</div>
+
+</main>
+</div>
+
+<script>
+function showPassage(num) {
+  var panels = document.querySelectorAll('.passage-panel');
+  for (var i = 0; i < panels.length; i++) {
+    panels[i].classList.remove('active');
+  }
+  var btns = document.querySelectorAll('.passage-btn');
+  for (var j = 0; j < btns.length; j++) {
+    btns[j].classList.remove('active');
+  }
+  var target = document.getElementById('p' + num);
+  if (target) target.classList.add('active');
+  if (event && event.target) event.target.classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+function showTab(passage, tab) {
+  for (var i = 1; i <= 7; i++) {
+    var panel = document.getElementById('t' + passage + '-' + i);
+    if (panel) panel.classList.remove('active');
+  }
+  var parentPanel = document.getElementById('p' + passage);
+  if (parentPanel) {
+    var tabBtns = parentPanel.querySelectorAll('.tab-btn');
+    for (var j = 0; j < tabBtns.length; j++) {
+      tabBtns[j].classList.remove('active');
+    }
+  }
+  var targetPanel = document.getElementById('t' + passage + '-' + tab);
+  if (targetPanel) targetPanel.classList.add('active');
+  if (event && event.target) event.target.classList.add('active');
+}
+
+function check(qid, btn, isCorrect) {
+  var parent = btn.parentElement;
+  var opts = parent.querySelectorAll('.quiz-opt');
+  for (var i = 0; i < opts.length; i++) {
+    opts[i].disabled = true;
+    opts[i].style.cursor = 'default';
+  }
+  var fb = document.getElementById('fb-' + qid);
+  if (isCorrect) {
+    btn.classList.add('correct');
+    if (fb) {
+      fb.className = 'quiz-feedback show ok';
+      fb.innerHTML = '\u2705 \uC815\uB2F5\uC785\uB2C8\uB2E4! ' + getExplain(qid);
+    }
+  } else {
+    btn.classList.add('wrong');
+    for (var k = 0; k < opts.length; k++) {
+      if (opts[k].getAttribute('onclick').indexOf('true') > -1) {
+        opts[k].classList.add('correct');
+      }
+    }
+    if (fb) {
+      fb.className = 'quiz-feedback show ng';
+      fb.innerHTML = '\u274C \uC624\uB2F5\uC785\uB2C8\uB2E4. \uC815\uB2F5\uC740 \uCD08\uB85D\uC0C9\uC73C\uB85C \uD45C\uC2DC\uB418\uC5C8\uC2B5\uB2C8\uB2E4. ' + getExplain(qid);
+    }
+  }
+}
+
+function getExplain(qid) {
+  var exp = {
+    'q166-1':'\uC790\uC544\uC640 \uB300\uC0C1\uC758 \uACBD\uACC4\uB97C \uB204\uADF8\uB7EC\uB728\uB9AC\uB294 \uB9C8\uC74C\uC758 \uD3C9\uD654\uB97C \uD1B5\uD574 \uC9C4\uC815\uD55C \uC77C\uC758 \uAC00\uCE58\uB97C \uCD94\uAD6C\uD55C\uB2E4\uB294 \uAC83\uC774 \uAE00\uC758 \uC8FC\uC81C\uC774\uB2E4.',
+    'q166-2':'\uBCF8\uBB38 4\uBC88 \uBB38\uC7A5\uC758 eases(\uB204\uADF8\uB7EC\uB728\uB9AC\uB2E4)\uAC00 \uC815\uB2F5. \uACBD\uACC4\uB97C \uAC15\uD654\uD558\uB294 \uAC83\uC774 \uC544\uB2C8\uB77C \uC644\uD654\uD558\uB294 \uAC83\uC774 \uD575\uC2EC.',
+    'q166-3':'the key\uB294 \uB2E8\uC218 \uC8FC\uC5B4\uC774\uBBC0\uB85C \uB3D9\uC0AC\uB294 are\uAC00 \uC544\uB2CC is\uAC00 \uB418\uC5B4\uC57C \uD55C\uB2E4.',
+    'q166-4':'\uBCF8\uBB38 3\uBC88 \uBB38\uC7A5\uC740 \uBD84\uB9AC\uAC10\uC774 \uC9C0\uBC30\uD558\uC9C0 \uC54A\uC744 \uB54C(=\uBD84\uB9AC\uAC10\uC774 \uC57D\uD560 \uB54C) \uC9C4\uC815\uD55C \uCF00\uC5B4\uAC00 \uAC00\uB2A5\uD558\uB2E4\uACE0 \uBC1D\uD78C\uB2E4.',
+    'q166-5':'\uBC18\uBCF5\uB41C \uC815\uBE44 \u2192 \uC758\uC2DD\uD654(\uB3C4\uC785) \u2192 (B) \uC120\uBD88\uAD50 \uBE44\uC720 \u2192 (C) \uBD84\uB9AC\uAC10 \uC5C6\uC774 \uCF00\uC5B4\uD558\uB294 \uC0C1\uD0DC \u2192 (A) \uBAA8\uB4E0 \uC77C\uC5D0\uC11C\uC758 \uC77C\uBC18\uD654\uC640 \uACB0\uB860\uC73C\uB85C \uC774\uC5B4\uC9C4\uB2E4.',
+    'q167-1':'\uC2A4\uC704\uC2A4 \uCE58\uC988 \uBAA8\uB378\uC744 \uD1B5\uD574 \uC7A0\uC7AC\uC801 \uC624\uB958\uAC00 \uC9C4\uC815\uD55C \uC0AC\uACE0 \uC6D0\uC778\uC774\uC9C0\uB9CC \uB208\uC5D0 \uBCF4\uC774\uC9C0 \uC54A\uC544 \uB2A5\uB3D9\uC801 \uC624\uB958\uB9CC \uAE30\uB85D\u00B7\uBD84\uC11D\uB418\uB294 \uD55C\uACC4\uB97C \uC9C0\uC801\uD55C\uB2E4.',
+    'q167-2':'\uBCF8\uBB38 5\uBC88 \uBB38\uC7A5\uC758 pass through(\uD1B5\uACFC\uD558\uB2E4)\uAC00 \uC815\uB2F5. \uCE58\uC988 \uAD6C\uBA0D\uC774 \uC815\uB82C\uB420 \uB54C \uB2A5\uB3D9\uC801 \uC624\uB958\uAC00 \uADF8 \uD1B5\uB85C\uB97C \uD1B5\uACFC\uD55C\uB2E4\uB294 \uBE44\uC720.',
+    'q167-3':'\uBD84\uC0AC\uAD6C\uBB38\uC740 \uB2A5\uB3D9 \uC758\uBBF8\uC774\uBBC0\uB85C allowed\uAC00 \uC544\uB2CC allowing\uC774 \uB418\uC5B4\uC57C \uD55C\uB2E4. \uC8FC\uC5B4 \"the holes\"\uAC00 \uB2A5\uB3D9\uC801\uC73C\uB85C \uD5C8\uC6A9\uD558\uB294 \uAC83.',
+    'q167-4':'\uBCF8\uBB38 9\uBC88 \uBB38\uC7A5\uC740 \uC7A0\uC7AC\uC801 \uC624\uB958\uAC00 \"\uBCF8\uC9C8\uC801\uC73C\uB85C \uBCF4\uAE30 \uC5B4\uB835\uB2E4\"\uACE0 \uBA85\uC2DC\uD558\uBBC0\uB85C \u2780\uB294 \uC815\uBC18\uB300.',
+    'q167-5':'\uC815\uC758(active vs latent) \u2192 (B) \uC8FC\uC81C\uBB38\u00B7\uCE58\uC988\uBAA8\uB378 \uB3C4\uC785 \u2192 (A) \uAD6C\uCCB4\uC0AC\uB840(\uC6B0\uD68C\uC804) \u2192 (C) \uACB0\uB860(\uAC00\uC2DC\uC131\uC758 \uD568\uC815) \uC21C\uC73C\uB85C \uC774\uC5B4\uC9C4\uB2E4.',
+    'q168-1':'\uC218\uC0AC\uC2B4 \uC0AC\uB840\uB97C \uD1B5\uD574 \uB3D9\uBB3C\uC758 \uAE30\uB9CC \uD589\uB3D9\uACFC \uC790\uC5F0 \uC120\uD0DD\uC774 \uB0B3\uB294 \uACF5\uC9C4\uD654\uC801 \uAD70\uBE44 \uACBD\uC7C1\uC744 \uC124\uBA85\uD558\uB294 \uAC83\uC774 \uAE00\uC758 \uC8FC\uC81C\uC774\uB2E4.',
+    'q168-2':'\uBCF8\uBB38 8\uBC88 \uBB38\uC7A5\uC758 instill(\uC2EC\uB2E4, \uC8FC\uC785\uD558\uB2E4)\uC774 \uC815\uB2F5. \uC790\uC5F0 \uC120\uD0DD\uC774 \uC0C1\uB300\uC5D0\uAC8C \uAC70\uC9D3 \uBBFF\uC74C\uC744 \"\uC2EC\uC5B4 \uC8FC\uB294\" \uC804\uB7B5\uC744 \uBCF4\uC0C1\uD55C\uB2E4\uB294 \uAC83.',
+    'q168-3':'avoid\uB294 \uB3D9\uBA85\uC0AC\uB9CC \uBAA9\uC801\uC5B4\uB85C \uCDE8\uD55C\uB2E4. to be deceived\uAC00 \uC544\uB2CC being deceived(\uB3D9\uBA85\uC0AC \uC218\uB3D9\uD0DC)\uAC00 \uC633\uB2E4.',
+    'q168-4':'\uBCF8\uBB38 8\uBC88 \uBB38\uC7A5\uC740 \uC790\uC5F0 \uC120\uD0DD\uC774 \"\uAC70\uC9D3 \uBBFF\uC74C\uC744 \uC2EC\uB294 \uC804\uB7B5\uC5D0\" \uBCF4\uC0C1\uC744 \uC900\uB2E4\uACE0 \uBC1D\uD78C\uB2E4. \u2783\uC740 \uC815\uBC18\uB300\uC758 \uC9C4\uC220.',
+    'q168-5':'\uC77C\uBC18 \uBA85\uC81C(\uB3C4\uC785) \u2192 (B) \uC218\uC0AC\uC2B4 \uC0AC\uB840 \uB3C4\uC785 \u2192 (A) \uAE30\uB9CC\uC758 \uC774\uC775 \uC124\uBA85 \u2192 (C) \uC790\uC5F0 \uC120\uD0DD\uACFC \uACF5\uC9C4\uD654 \uACB0\uB860 \uC21C\uC73C\uB85C \uC774\uC5B4\uC9C4\uB2E4.'
+  };
+  return exp[qid] || '';
+}
+
+function resetQuiz(qid) {
+  var fb = document.getElementById('fb-' + qid);
+  if (fb) {
+    fb.className = 'quiz-feedback';
+    fb.innerHTML = '';
+  }
+  var allBlocks = document.querySelectorAll('.quiz-q');
+  for (var i = 0; i < allBlocks.length; i++) {
+    if (allBlocks[i].querySelector('#fb-' + qid)) {
+      var opts = allBlocks[i].querySelectorAll('.quiz-opt');
+      for (var j = 0; j < opts.length; j++) {
+        opts[j].classList.remove('correct', 'wrong');
+        opts[j].disabled = false;
+        opts[j].style.cursor = 'pointer';
+      }
+      break;
+    }
+  }
+}
+
+function toggleAns(id) {
+  var el = document.getElementById(id);
+  if (el) el.classList.toggle('show');
+}
+</script>
+</body>
+</html>
